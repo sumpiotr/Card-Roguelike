@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f8c8f24e359d9a4897f83368e4919c1, type: 3}
-  m_Name: ActionSet
+  m_Name: ActionSetScriptableObject
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 06c877f33b99f664796650f2f47252a8, type: 2}
-  - {fileID: 11400000, guid: bb60c195da5adb74abc79c7f6bc181bf, type: 2}
-  - {fileID: 11400000, guid: 5712c88c070ba3d4f9831b8d1fb98aff, type: 2}
+  - {fileID: 0}

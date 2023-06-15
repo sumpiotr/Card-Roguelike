@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dbe616eb656eb44b8d338e7d5456d6, type: 3}
-  m_Name: BaseAttack
+  m_Script: {fileID: 11500000, guid: f6a762e1c32399648abf963b8b686cae, type: 3}
+  m_Name: Floor
   m_EditorClassIdentifier: 
-  value: 3
-  targetOwner: 0
+  walkable: 1
+  sprite: {fileID: 21300000, guid: fc1559c805c84414c85b15bb1c855bf5, type: 3}

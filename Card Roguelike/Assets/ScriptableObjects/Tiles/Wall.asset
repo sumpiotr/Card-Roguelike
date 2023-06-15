@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be5ef0fb7ccaa549b7a67b34e143f3b, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: f6a762e1c32399648abf963b8b686cae, type: 3}
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  value: 15
-  targetOwner: 1
-  stat: 0
+  walkable: 0
+  sprite: {fileID: 21300000, guid: c43ce1a9c38abd74f915d367607223e2, type: 3}

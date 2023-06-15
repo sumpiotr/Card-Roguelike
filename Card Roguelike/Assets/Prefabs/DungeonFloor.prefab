@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700444372587649235}
   - component: {fileID: 3969270038731057475}
+  - component: {fileID: -941146570456391332}
   m_Layer: 0
   m_Name: DungeonFloor
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-941146570456391332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005748905510458765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cf65226c856694db794ba9ca1c774c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 9535e6bbdc82c434d9ea05f08e421862, type: 2}
+  occupyingCharacter: {fileID: 0}

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Actions.ScriptableObjects
+namespace Actions
 {
-    
-    public class BaseActionScriptableObject : ScriptableObject
+    [System.Serializable]
+    public class BaseActionData
     {
         protected ActionType type;
         public int value;
@@ -12,6 +12,11 @@ namespace Actions.ScriptableObjects
         public ActionType GetActionType()
         {
             return type;
+        }
+
+        public void SetActionType(ActionType type)
+        {
+            this.type = type;
         }
     }
 }
