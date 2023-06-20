@@ -2,8 +2,9 @@ namespace Character
 {
    public enum Stats 
    {
-      Health,
-      Armor,
-      Energy
+        None,
+        Health,
+        Armor,
+        Energy
    }
 }

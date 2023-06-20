@@ -10,7 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f8c8f24e359d9a4897f83368e4919c1, type: 3}
-  m_Name: ActionSetScriptableObject
+  m_Name: Grapplng Hook
   m_EditorClassIdentifier: 
+  cost: 0
   actions:
-  - {fileID: 0}
+  - type: 3
+    value: -3
+    stat: 0
+    range:
+      rangeType: 2
+      minRange: 1
+      maxRange: 3
+      source: 1
+      multipleTargets: 0
