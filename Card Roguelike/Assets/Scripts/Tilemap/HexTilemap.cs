@@ -18,10 +18,27 @@ namespace Tilemap
         //hex size in unity unit
         [SerializeField] private float hexSize = 1f;
 
-        private int[,] _neighbourDirections =  { { 1, 0 }, { 1, -1 }, { 0, -1 }, { -1, 0 }, { -1, 1 }, { 0, 1 } };
+        private int[,] _neighbourDirections =  { { 0, -1 }, { 1, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 }, { -1, 1 } };
 
         private Dictionary<Vector2Int, TileObject> _hexes = new Dictionary<Vector2Int, TileObject>();
 
+
+        Vector2Int firstTail = new Vector2Int(-1, -1);
+
+        public void Track(Vector2Int axialPosition)
+        {
+            if(firstTail.x == -1)
+            {
+                firstTail = axialPosition;
+                return;
+            }
+            List<Node> nodes = AStar.findPath(this, firstTail, axialPosition);
+            foreach(Node node in nodes)
+            {
+                GetHex(node.nodePosition).gameObject.SetActive(false);
+            }
+            firstTail = new Vector2Int(-1, -1);
+        }
 
         private void Awake()
         {
@@ -41,13 +58,14 @@ namespace Tilemap
                 Vector2 position = new Vector2(0 + x *(size.x*3/4), mapHeight*size.y - y*size.y - offset);
                 TileObject hex = Instantiate(hexPrefab, position, Quaternion.identity, transform);
                 hex.transform.localScale = new Vector3(hexSize, hexSize, 1);
-                //hex.name = x + "x" + y;
+           
 
-                int q = y;
-                int r = x - (y - (y & 1)) / 2;
+                int q = x;
+                int r = y - (x - (x & 1)) / 2;
+                hex.axialPosition = new Vector2Int(q, r);
                 _hexes.Add(new Vector2Int(q, r), hex);
-                hex.name = q + "x" + r;
-            }
+                hex.name = q + "x" + r + "(" +  x + "x" + y + ")";
+                }
         }
 
         public TileObject GetHex(Vector2Int axialPosition)
@@ -77,7 +95,50 @@ namespace Tilemap
             return neighbours;
         }
 
-        public List<TileObject> GetTileObjectsInRange(Vector2Int axialPosition, int range)
+        public List<TileObject> GetWalkableNeighbours(Vector2Int axialPosition)
+        {
+            List<TileObject> neighbours = new List<TileObject>();
+            for (int i = 0; i < 6; i++)
+            {
+                Vector2Int neighbourPosition = new Vector2Int(axialPosition.x + _neighbourDirections[i, 0], axialPosition.y + _neighbourDirections[i, 1]);
+                if (_hexes.ContainsKey(neighbourPosition))
+                {
+                    if(_hexes[neighbourPosition].IsWalkable()) neighbours.Add(_hexes[neighbourPosition]);
+                }
+            }
+            return neighbours;
+        }
+
+        public List<Vector2Int> GetWalkableNeighboursPositions(Vector2Int axialPosition)
+        {
+            List<Vector2Int> neighbours = new List<Vector2Int>();
+            for (int i = 0; i < 6; i++)
+            {
+                Vector2Int neighbourPosition = new Vector2Int(axialPosition.x + _neighbourDirections[i, 0], axialPosition.y + _neighbourDirections[i, 1]);
+                if (_hexes.ContainsKey(neighbourPosition))
+                {
+                    if (_hexes[neighbourPosition].IsWalkable()) neighbours.Add(neighbourPosition);
+                }
+            }
+            return neighbours;
+        }
+
+        public List<TileObject> GetWalkableAndEmptyNeighbours(Vector2Int axialPosition)
+        {
+            List<TileObject> neighbours = new List<TileObject>();
+            for (int i = 0; i < 6; i++)
+            {
+                Vector2Int neighbourPosition = new Vector2Int(axialPosition.x + _neighbourDirections[i, 0], axialPosition.y + _neighbourDirections[i, 1]);
+                if (_hexes.ContainsKey(neighbourPosition))
+                {
+                    TileObject tile = _hexes[neighbourPosition];
+                    if (tile.IsWalkable() && tile.IsEmpty()) neighbours.Add(_hexes[neighbourPosition]);
+                }
+            }
+            return neighbours;
+        }
+
+        public List<TileObject> GetTileObjectsInRange(Vector2Int startPosition, int range)
         {
             List<TileObject> hexesInRange = new List<TileObject>();
             for (int dx = -range; dx <= range; dx++)
@@ -87,12 +148,41 @@ namespace Tilemap
                 for (int dy = minDy; dy <= maxDy; dy++)
                 {
                     int dz = -dx - dy;
-                    Vector2Int pos = new Vector2Int(axialPosition.x + dx, axialPosition.y + dz);
+                    Vector2Int pos = new Vector2Int(startPosition.x + dx, startPosition.y + dz);
                     if (_hexes.ContainsKey(pos))hexesInRange.Add(_hexes[pos]);
                 }
             }
             return hexesInRange;
         }
+
+        public List<TileObject> GetTileObjectsInRange(Vector2Int startPosition, int minRange, int maxRange)
+        {
+            List<TileObject> tilesInRange = new List<TileObject>();
+            for (int dx = -maxRange; dx <= maxRange; dx++)
+            {
+                for (int dy = Mathf.Max(-maxRange, -dx - maxRange); dy <= Mathf.Min(maxRange, -dx + maxRange); dy++)
+                {
+                    Vector2Int currentPos = new Vector2Int(startPosition.x + dx, startPosition.y + dy);
+                    if (!_hexes.ContainsKey(currentPos)) continue;
+                    float distance = AxialDistance(startPosition, currentPos);
+                    if (distance >= minRange && distance <= maxRange)
+                    {
+                        TileObject tile = _hexes[currentPos];
+                        tilesInRange.Add(tile);
+                    }
+                }
+            }
+
+            return tilesInRange;
+        }
+
+        public static float AxialDistance(Vector2Int a, Vector2Int b) {
+            Vector2Int vec = a - b;
+            return (Mathf.Abs(vec.x)
+              + Mathf.Abs(vec.x + vec.y)
+              + Mathf.Abs(vec.y)) / 2;
+        }
     }
+
 }
 

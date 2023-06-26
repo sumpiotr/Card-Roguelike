@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 700444372587649235}
   - component: {fileID: 3969270038731057475}
   - component: {fileID: -941146570456391332}
+  - component: {fileID: -4850496736325510850}
   m_Layer: 0
   m_Name: DungeonFloor
   m_TagString: Untagged
@@ -98,4 +99,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9535e6bbdc82c434d9ea05f08e421862, type: 2}
-  occupyingCharacter: {fileID: 0}
+  axialPosition: {x: 0, y: 0}
+--- !u!61 &-4850496736325510850
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005748905510458765}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.026178, y: 0.8900524}
+    newSize: {x: 1.026178, y: 0.8900524}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.026178, y: 0.8900524}
+  m_EdgeRadius: 0
