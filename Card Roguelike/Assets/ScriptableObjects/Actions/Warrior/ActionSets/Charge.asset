@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0
   actions:
-  - type: 0
+  - type: 1
     value: 10
     stat: 0
     range:
@@ -23,12 +23,21 @@ MonoBehaviour:
       maxRange: 8
       source: 1
       multipleTargets: 0
-  - type: 2
+  - type: 3
     value: 0
     stat: 0
     range:
       rangeType: 1
       minRange: 4
       maxRange: 8
+      source: 1
+      multipleTargets: 0
+  - type: 0
+    value: 10
+    stat: 0
+    range:
+      rangeType: 1
+      minRange: 1
+      maxRange: 1
       source: 1
       multipleTargets: 0

@@ -1,7 +1,7 @@
 public enum RangeType
 {
     Owner,
-    Previous,
+    Target,
     Area,
     Line,
 }

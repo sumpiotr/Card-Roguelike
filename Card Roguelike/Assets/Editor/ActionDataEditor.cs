@@ -39,6 +39,9 @@ public class ActionDataEditor : PropertyDrawer
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
                     EditorGUI.PropertyField(position2, property.FindPropertyRelative("range"));
                     break;
+                case ActionType.ChooseAttackTarget:
+                    EditorGUI.PropertyField(position1, property.FindPropertyRelative("range"));
+                    break;
                 case ActionType.Buff:
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
                     EditorGUI.PropertyField(position2, property.FindPropertyRelative("stat"));
@@ -47,6 +50,9 @@ public class ActionDataEditor : PropertyDrawer
                 case ActionType.Move:
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
                     EditorGUI.PropertyField(position2, property.FindPropertyRelative("range"));
+                    break;
+                case ActionType.ChooseMoveTarget:
+                    EditorGUI.PropertyField(position1, property.FindPropertyRelative("range"));
                     break;
                 case ActionType.Push:
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));

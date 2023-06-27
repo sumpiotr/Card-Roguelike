@@ -44,7 +44,7 @@ public class RangeDataEditor : PropertyDrawer
             {
                 case RangeType.Owner:
                     break;
-                case RangeType.Previous:
+                case RangeType.Target:
                     break;
                 case RangeType.Area:
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("minRange"));

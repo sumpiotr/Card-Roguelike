@@ -48,17 +48,5 @@ namespace Tilemap.Tile
             _spriteRenderer.sprite = data.sprite;
         }
 
-        private void OnMouseDown()
-        {
-            //HexTilemap.Instance.Track(axialPosition);
-            Debug.Log(axialPosition.x + "x" + axialPosition.y);
-            List<TileObject> tiles = HexTilemap.Instance.GetTileObjectsInRange(axialPosition, 3, 4);
-            foreach(TileObject tile in tiles)
-            {
-                Debug.Log(tile.axialPosition.x + "x" + tile.axialPosition.y);
-                tile.gameObject.SetActive(false);
-            }
-        }
-
     }
 }
