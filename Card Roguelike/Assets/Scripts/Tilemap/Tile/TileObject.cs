@@ -31,6 +31,7 @@ namespace Tilemap.Tile
         public void SetOccupiedCharacter(BaseCharacter character)
         {
             _occupyingCharacter = character;
+            character.AxialPosition = axialPosition;
         }
 
         public bool IsWalkable()

@@ -7,6 +7,8 @@ namespace Map
     public class MapManager : MonoBehaviour
     {
 
+        public static MapManager Instance = null;
+
         [SerializeField]
         private int width = 20;
     
@@ -14,8 +16,15 @@ namespace Map
         private int height =  20;
 
         [SerializeField] private TileDataScriptableObject wallData;
-    
-        void Start()
+
+
+        private void Awake()
+        {
+            if (Instance != null) return;
+            Instance = this;
+        }
+
+        public void GenerateMap()
         {
             Debug.Log(HexTilemap.Instance);
             HexTilemap.Instance.GenerateTilemap(width, height);
@@ -30,6 +39,11 @@ namespace Map
                     }
                 }
             }
+        }
+
+        public Vector2Int GetMapSize()
+        {
+            return new Vector2Int(width, height);
         }
     }
 }

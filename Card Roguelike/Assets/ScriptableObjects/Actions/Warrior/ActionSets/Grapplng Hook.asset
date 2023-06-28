@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 0
   actions:
-  - type: 3
+  - type: 5
     value: -3
     stat: 0
     range:
