@@ -10,13 +10,24 @@ using UnityEngine.Tilemaps;
 public class GameManager : MonoBehaviour
 {
 
+
+    public static GameManager Instance = null;
+
     [SerializeField]
     private Player playerPrefab;
 
     [SerializeField]
     private CameraController cameraController;
 
- 
+    private Player _player = null;
+
+
+
+    private void Awake()
+    {
+        if (Instance != null) return;
+        Instance = this;
+    }
 
     void Start()
     {
@@ -39,5 +50,11 @@ public class GameManager : MonoBehaviour
         Player player = Instantiate(playerPrefab, new Vector3(startTile.transform.position.x, startTile.transform.position.y, -1), Quaternion.identity);
         startTile.SetOccupiedCharacter(player);
         cameraController.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cameraController.transform.position.z);
+        _player = player;
+    }
+
+    public Player GetPlayer()
+    {
+        return _player;
     }
 }

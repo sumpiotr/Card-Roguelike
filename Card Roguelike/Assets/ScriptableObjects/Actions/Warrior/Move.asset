@@ -26,3 +26,12 @@ MonoBehaviour:
       maxRange: 5
       source: 1
       multipleTargets: 0
+  - type: 3
+    value: 0
+    stat: 0
+    range:
+      rangeType: 3
+      minRange: 1
+      maxRange: 3
+      source: 1
+      multipleTargets: 0

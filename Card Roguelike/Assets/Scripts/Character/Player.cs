@@ -5,6 +5,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Tilemap.Tile;
+using Tilemap;
+using UnityEngine.Tilemaps;
 
 public class Player : BaseCharacter
 {
@@ -18,6 +21,8 @@ public class Player : BaseCharacter
     private List<CardDataScriptableObject> discarded = new List<CardDataScriptableObject>();
 
     public Nullable<Vector2Int> targetPosition = null;
+
+    public List<TileObject> highlitedTiles = new List<TileObject>();
 
 
     private void Start()
@@ -56,16 +61,16 @@ public class Player : BaseCharacter
     }
 
 
-    public void ResolveActionSet(ActionSetScriptableObject actionSet)
+    public void ResolveActionSet(List<ActionData> actionSet)
     {
         ResolveAction(0, actionSet);
     }
 
-    protected void ResolveAction(int actionIndex, ActionSetScriptableObject actionSet)
+    protected void ResolveAction(int actionIndex, List<ActionData> actionSet)
     {
-        if (actionIndex == actionSet.actions.Count) return;
+        if (actionIndex == actionSet.Count) return;
         Action onActionResolved = () => { ResolveAction(actionIndex + 1, actionSet); };
-        ActionData actionData = actionSet.actions[actionIndex];
+        ActionData actionData = actionSet[actionIndex];
         switch (actionData.type)
         {
             case ActionType.Attack:
@@ -95,9 +100,55 @@ public class Player : BaseCharacter
         if(actionData.range.rangeType == RangeType.Target)
         {
             if (targetPosition == null) return;
-
+            Move((Vector2Int)targetPosition, onResolved);
+            return;
         }
+        else
+        {
+            ChooseMoveTarget(actionData.range, (Vector2Int choosedPosition) =>
+            {
+                IEnumerator moveCoroutine =  Move(choosedPosition, onResolved);
+                StartCoroutine(moveCoroutine);
+            });
+        }
+        
     }
+
+
+    private void ChooseMoveTarget(RangeData rangeData, Action<Vector2Int> onChoosed)
+    {
+        List<TileObject> tiles = new List<TileObject>();
+        switch (rangeData.rangeType)
+        {
+            case RangeType.Area:
+                tiles = HexTilemap.Instance.GetWalkableAndEmptyTileObjectsInRange(AxialPosition, rangeData.minRange, rangeData.maxRange);
+                break;             
+            case RangeType.Line:
+                tiles = HexTilemap.Instance.GetWalkableAndEmptyTileObjectsInLines(AxialPosition, rangeData.minRange, rangeData.maxRange);
+                break;                            
+        }
+
+        foreach (TileObject tile in tiles)
+        {
+            if (AStar.findPath(HexTilemap.Instance, AxialPosition, tile.axialPosition, rangeData.maxRange) == null) continue;
+            tile.SetHighlight(Color.green, (Vector2Int tilePosition) =>
+            {
+                ResetHighlightedTiles();
+                onChoosed(tilePosition);
+            });
+        }
+        highlitedTiles = tiles;
+    }
+
+    private void ResetHighlightedTiles()
+    {
+        foreach(TileObject tile in highlitedTiles)
+        {
+            tile.RemoveHighlight();
+        }
+        highlitedTiles.Clear();
+    }
+
     protected virtual void PlayPush(ActionData actionData, Action onResolved)
     {
         onResolved();
@@ -108,8 +159,26 @@ public class Player : BaseCharacter
         onResolved();
     } 
 
-    protected virtual void Move(Vector2Int target)
+    private IEnumerator Move(Vector2Int target, Action callback)
     {
-        
+        List<Node> path = AStar.findPath(HexTilemap.Instance, AxialPosition, target);
+        Debug.Log(path == null);
+        if (path != null)
+        {
+            if (path.Count > 0)
+            {
+                HexTilemap.Instance.GetHex(AxialPosition).SetOccupiedCharacter(null);
+                foreach (Node node in path)
+                {
+                    TileObject tile = HexTilemap.Instance.GetHex(node.nodePosition);
+                    transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, transform.position.z);
+                    yield return new WaitForSeconds(Time.deltaTime * 500);
+                }
+                TileObject finalNode = HexTilemap.Instance.GetHex(path[path.Count - 1].nodePosition);
+                finalNode.SetOccupiedCharacter(this);
+            }
+        }
+        callback();
+
     }
 }

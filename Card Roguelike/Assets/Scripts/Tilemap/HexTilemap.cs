@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Tilemap.Tile;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 namespace Tilemap
 {
@@ -175,6 +176,86 @@ namespace Tilemap
 
             return tilesInRange;
         }
+
+
+        public List<TileObject> GetWalkableAndEmptyTileObjectsInRange(Vector2Int startPosition, int range)
+        {
+            List<TileObject> hexesInRange = new List<TileObject>();
+            for (int dx = -range; dx <= range; dx++)
+            {
+                int minDy = Mathf.Max(-range, -dx - range);
+                int maxDy = Mathf.Min(range, -dx + range);
+                for (int dy = minDy; dy <= maxDy; dy++)
+                {
+                    int dz = -dx - dy;
+                    Vector2Int pos = new Vector2Int(startPosition.x + dx, startPosition.y + dz);
+                 
+                    if (_hexes.ContainsKey(pos)) {
+                        TileObject tile = _hexes[pos];
+                        if (tile.IsEmpty() && tile.IsWalkable())hexesInRange.Add(tile);
+                    }
+                }
+            }
+            return hexesInRange;
+        }
+
+        public List<TileObject> GetWalkableAndEmptyTileObjectsInRange(Vector2Int startPosition, int minRange, int maxRange)
+        {
+            List<TileObject> tilesInRange = new List<TileObject>();
+            for (int dx = -maxRange; dx <= maxRange; dx++)
+            {
+                for (int dy = Mathf.Max(-maxRange, -dx - maxRange); dy <= Mathf.Min(maxRange, -dx + maxRange); dy++)
+                {
+                    Vector2Int currentPos = new Vector2Int(startPosition.x + dx, startPosition.y + dy);
+                    if (!_hexes.ContainsKey(currentPos)) continue;
+                    float distance = AxialDistance(startPosition, currentPos);
+                    if (distance >= minRange && distance <= maxRange)
+                    {
+                        if (_hexes.ContainsKey(currentPos))
+                        {
+                            TileObject tile = _hexes[currentPos];
+                            if (tile.IsEmpty() && tile.IsWalkable()) tilesInRange.Add(tile);
+                        }
+                    }
+                }
+            }
+
+            return tilesInRange;
+        }
+
+        public List<TileObject> GetWalkableAndEmptyTileObjectsInLines(Vector2Int startPosition, int range)
+        {
+            List<TileObject> hexesInRange = new List<TileObject>();
+            for(int directionIndex = 0; directionIndex <= 6; directionIndex++)
+            {
+                for(int i = 1; i <= range; i++)
+                {
+                    TileObject tile = GetHex(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
+                    if (tile == null) break;
+                    if (!tile.IsWalkable() || !tile.IsEmpty()) break;
+                    hexesInRange.Add(tile);
+                }
+            }
+            return hexesInRange;
+        }
+
+        public List<TileObject> GetWalkableAndEmptyTileObjectsInLines(Vector2Int startPosition, int minRange, int maxRange)
+        {
+            List<TileObject> hexesInRange = new List<TileObject>();
+            for (int directionIndex = 0; directionIndex < 6; directionIndex++)
+            {
+                for (int i = minRange; i <= maxRange; i++)
+                {
+                    TileObject tile = GetHex(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
+                    if (tile == null) break;
+                    if (!tile.IsWalkable() || !tile.IsEmpty()) break;
+                    hexesInRange.Add(tile);
+                }
+            }
+            return hexesInRange;
+        }
+
+
 
         public static float AxialDistance(Vector2Int a, Vector2Int b) {
             Vector2Int vec = a - b;

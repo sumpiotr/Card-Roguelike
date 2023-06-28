@@ -18,6 +18,8 @@ public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
     [SerializeField]
     private TextMeshProUGUI descriptionText;
 
+    private Vector2 _startPosition = new Vector2(0, 0);
+
 
 
     #region Intefaces
@@ -29,6 +31,14 @@ public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        if(transform.localPosition.y - _startPosition.y > 100)
+        {
+            gameObject.SetActive(false);
+            GameManager.Instance.GetPlayer().ResolveActionSet(cardData.actions);
+            return;
+        }
+
+
         SetDefaultPosition();
     }
 
@@ -48,5 +58,10 @@ public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
         titleText.text = cardData.cardName;
         descriptionText.text = cardData.description;
         cardImage.sprite = cardData.image;
+    }
+
+    private void OnEnable()
+    {
+        _startPosition = transform.localPosition;
     }
 }

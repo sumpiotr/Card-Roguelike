@@ -16,6 +16,8 @@ namespace Tilemap.Tile
 
         public Vector2Int axialPosition;
 
+        private Action<Vector2Int> _onClick = null;
+
 
         private void Start()
         {
@@ -31,6 +33,7 @@ namespace Tilemap.Tile
         public void SetOccupiedCharacter(BaseCharacter character)
         {
             _occupyingCharacter = character;
+            if(character == null)return;
             character.AxialPosition = axialPosition;
         }
 
@@ -49,5 +52,22 @@ namespace Tilemap.Tile
             _spriteRenderer.sprite = data.sprite;
         }
 
+
+        public void SetHighlight(Color color, Action<Vector2Int> onClick)
+        {
+            this._spriteRenderer.color = color;
+            _onClick = onClick;
+        }
+
+        public void RemoveHighlight()
+        {
+            this._spriteRenderer.color = Color.white;
+            _onClick = null;
+        }
+
+        private void OnMouseDown()
+        {
+           if(_onClick != null) _onClick(axialPosition);
+        }
     }
 }
