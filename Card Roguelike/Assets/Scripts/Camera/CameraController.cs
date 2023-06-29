@@ -4,15 +4,16 @@ namespace Camera
 {
     public class CameraController : MonoBehaviour
     {
-        Rigidbody2D rigidbody2d;
+        private Rigidbody2D _rigidbody2d;
 
         [SerializeField]
         UnityEngine.Camera camera;
-        int cameraSpeed = 30;
+
+        private int _cameraSpeed = 30;
 
         private void Start()
         {
-            rigidbody2d = GetComponent<Rigidbody2D>();
+            _rigidbody2d = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -32,8 +33,8 @@ namespace Camera
 
         private void Move() 
         {
-            rigidbody2d.AddForce(new Vector2(Input.GetAxis("Horizontal") * cameraSpeed * camera.orthographicSize/2, Input.GetAxis("Vertical") * cameraSpeed * camera.orthographicSize/2));
-            rigidbody2d.velocity = Vector2.zero;
+            _rigidbody2d.AddForce(new Vector2(Input.GetAxis("Horizontal") * _cameraSpeed * camera.orthographicSize/2, Input.GetAxis("Vertical") * _cameraSpeed * camera.orthographicSize/2));
+            _rigidbody2d.velocity = Vector2.zero;
         }
     
     }

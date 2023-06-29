@@ -41,7 +41,7 @@ public class AStar
 
             foreach (Vector2Int nodePosition in adjacentedNodes)
             {
-                TileObject tile = grid.GetHex(nodePosition);
+                TileObject tile = grid.GetTile(nodePosition);
                 if (getNodeByPosition(closedList, nodePosition) != null) continue;
                 if (!tile.IsEmpty() && nodePosition != targetPosition) continue;
                 Node adjacentedNode = getNodeByPosition(openList, nodePosition);

@@ -10,7 +10,7 @@ namespace Tilemap
 
         public static HexTilemap Instance = null;
 
-        [SerializeField] private TileObject hexPrefab;
+        [SerializeField] private TileObject tilePrefab;
 
         //size in hex numer
         private int mapWidth = 10;
@@ -22,24 +22,6 @@ namespace Tilemap
         private int[,] _neighbourDirections =  { { 0, -1 }, { 1, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 }, { -1, 1 } };
 
         private Dictionary<Vector2Int, TileObject> _hexes = new Dictionary<Vector2Int, TileObject>();
-
-
-        Vector2Int firstTail = new Vector2Int(-1, -1);
-
-        public void Track(Vector2Int axialPosition)
-        {
-            if(firstTail.x == -1)
-            {
-                firstTail = axialPosition;
-                return;
-            }
-            List<Node> nodes = AStar.findPath(this, firstTail, axialPosition);
-            foreach(Node node in nodes)
-            {
-                GetHex(node.nodePosition).gameObject.SetActive(false);
-            }
-            firstTail = new Vector2Int(-1, -1);
-        }
 
         private void Awake()
         {
@@ -53,11 +35,11 @@ namespace Tilemap
             mapHeight = height;
             for(int y = 0; y < mapHeight; y++) for (int x = 0; x < mapWidth; x++)
             {
-                Vector2 size = hexPrefab.GetComponent<SpriteRenderer>().size;
+                Vector2 size = tilePrefab.GetComponent<SpriteRenderer>().size;
                 size *= hexSize;
                 float offset = x % 2 == 1 ?  size.y/2  : 0;
                 Vector2 position = new Vector2(0 + x *(size.x*3/4), mapHeight*size.y - y*size.y - offset);
-                TileObject hex = Instantiate(hexPrefab, position, Quaternion.identity, transform);
+                TileObject hex = Instantiate(tilePrefab, position, Quaternion.identity, transform);
                 hex.transform.localScale = new Vector3(hexSize, hexSize, 1);
            
 
@@ -66,15 +48,15 @@ namespace Tilemap
                 hex.axialPosition = new Vector2Int(q, r);
                 _hexes.Add(new Vector2Int(q, r), hex);
                 hex.name = q + "x" + r + "(" +  x + "x" + y + ")";
-                }
+            }
         }
 
-        public TileObject GetHex(Vector2Int axialPosition)
+        public TileObject GetTile(Vector2Int axialPosition)
         {
             return _hexes.ContainsKey(axialPosition) ? _hexes[axialPosition] : null;
         }
 
-        public TileObject GetHexByIndexPosition(Vector2Int offsetPosition)
+        public TileObject GetTileByIndexPosition(Vector2Int offsetPosition)
         {
             int q = offsetPosition.y;
             int r = offsetPosition.x - (offsetPosition.y - (offsetPosition.y & 1)) / 2;
@@ -230,7 +212,7 @@ namespace Tilemap
             {
                 for(int i = 1; i <= range; i++)
                 {
-                    TileObject tile = GetHex(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
+                    TileObject tile = GetTile(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
                     if (tile == null) break;
                     if (!tile.IsWalkable() || !tile.IsEmpty()) break;
                     hexesInRange.Add(tile);
@@ -246,7 +228,7 @@ namespace Tilemap
             {
                 for (int i = minRange; i <= maxRange; i++)
                 {
-                    TileObject tile = GetHex(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
+                    TileObject tile = GetTile(new Vector2Int(startPosition.x + (_neighbourDirections[directionIndex, 0] * i), startPosition.y + (_neighbourDirections[directionIndex, 1] * i)));
                     if (tile == null) break;
                     if (!tile.IsWalkable() || !tile.IsEmpty()) break;
                     hexesInRange.Add(tile);

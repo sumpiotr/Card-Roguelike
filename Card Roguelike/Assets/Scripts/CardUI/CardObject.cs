@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
 {
 
-    private CardDataScriptableObject cardData = null;
+    private CardDataScriptableObject _cardData = null;
 
     [SerializeField]
     private Image cardImage;
@@ -34,7 +34,7 @@ public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
         if(transform.localPosition.y - _startPosition.y > 100)
         {
             gameObject.SetActive(false);
-            GameManager.Instance.GetPlayer().ResolveActionSet(cardData.actions);
+            GameManager.Instance.GetPlayer().ResolveActionSet(_cardData.actions);
             return;
         }
 
@@ -54,7 +54,7 @@ public class CardObject : MonoBehaviour, IDragHandler, IDropHandler
 
     public void setupCard(CardDataScriptableObject cardData)
     {
-        this.cardData = cardData;
+        this._cardData = cardData;
         titleText.text = cardData.cardName;
         descriptionText.text = cardData.description;
         cardImage.sprite = cardData.image;

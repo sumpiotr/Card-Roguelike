@@ -9,7 +9,7 @@ public class CardObjectsManager : MonoBehaviour
     [SerializeField]
     private GameObject cardContainer;
 
-    private List<CardObject> cardObjects = new List<CardObject> ();
+    private List<CardObject> _cardObjects = new List<CardObject> ();
 
     private void Awake()
     {
@@ -22,13 +22,13 @@ public class CardObjectsManager : MonoBehaviour
         foreach (CardObject card in this.cardContainer.gameObject.GetComponentsInChildren<CardObject>(true))
         {
             card.gameObject.SetActive(false);
-            cardObjects.Add(card);
+            _cardObjects.Add(card);
         }
     }
 
     public CardObject GetCardObject()
     {
-        foreach(CardObject cardObject in cardObjects)
+        foreach(CardObject cardObject in _cardObjects)
         {
             if (!cardObject.gameObject.activeSelf) { 
                 cardObject.gameObject.SetActive(true);

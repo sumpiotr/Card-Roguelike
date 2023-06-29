@@ -15,7 +15,8 @@ namespace Map
         [SerializeField]
         private int height =  20;
 
-        [SerializeField] private TileDataScriptableObject wallData;
+        [SerializeField] 
+        private TileDataScriptableObject wallData;
 
 
         private void Awake()
@@ -35,7 +36,7 @@ namespace Map
                 {
                     if (map[i, j] == 1)
                     {
-                        HexTilemap.Instance.GetHexByIndexPosition(new Vector2Int(i, j)).SetData(wallData);
+                        HexTilemap.Instance.GetTileByIndexPosition(new Vector2Int(i, j)).SetData(wallData);
                     }
                 }
             }

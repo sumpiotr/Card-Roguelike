@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
 
             Vector2Int playerStartPosition = new Vector2Int(Random.Range(0, MapManager.Instance.GetMapSize().x), Random.Range(0, MapManager.Instance.GetMapSize().y));
-             startTile = HexTilemap.Instance.GetHexByIndexPosition(playerStartPosition);
+             startTile = HexTilemap.Instance.GetTileByIndexPosition(playerStartPosition);
             if (startTile != null)
             {
                 foundPosition = startTile.IsEmpty() && startTile.IsWalkable();

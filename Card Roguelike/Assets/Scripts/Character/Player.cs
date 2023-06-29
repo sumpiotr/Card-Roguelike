@@ -12,17 +12,17 @@ using UnityEngine.Tilemaps;
 public class Player : BaseCharacter
 {
 
-    const  int HAND_SIZE = 5;
+    const int HAND_SIZE = 5;
 
     [SerializeField]
     private DeckScriptableObject deckData;
 
-    private List<CardDataScriptableObject> deck = new List<CardDataScriptableObject>();
-    private List<CardDataScriptableObject> discarded = new List<CardDataScriptableObject>();
+    private List<CardDataScriptableObject> _deck = new List<CardDataScriptableObject>();
+    private List<CardDataScriptableObject> _discarded = new List<CardDataScriptableObject>();
 
-    public Nullable<Vector2Int> targetPosition = null;
+    private Nullable<Vector2Int> _targetPosition = null;
 
-    public List<TileObject> highlitedTiles = new List<TileObject>();
+    private List<TileObject> _highlitedTiles = new List<TileObject>();
 
 
     private void Start()
@@ -31,23 +31,23 @@ public class Player : BaseCharacter
         {
             for (int i = 0; i < card.count; i++)
             {
-                deck.Add(card.item);
+                _deck.Add(card.item);
             }
         }
-        DrawCards(3);
+        DrawCards(HAND_SIZE);
     }
 
     private void DrawCard()
     {
-        if (deck.Count == 0 && discarded.Count == 0) return;
-        if (deck.Count == 0)
+        if (_deck.Count == 0 && _discarded.Count == 0) return;
+        if (_deck.Count == 0)
         {
-            deck = discarded;
-            discarded = new List<CardDataScriptableObject>();
+            _deck = _discarded;
+            _discarded = new List<CardDataScriptableObject>();
         }
-        int randomIndex = Random.Range(0, deck.Count);
-        CardDataScriptableObject cardData = deck[randomIndex];
-        deck.Remove(cardData);
+        int randomIndex = Random.Range(0, _deck.Count);
+        CardDataScriptableObject cardData = _deck[randomIndex];
+        _deck.Remove(cardData);
         CardObject cardObject = CardObjectsManager.Instance.GetCardObject();
         cardObject.setupCard(cardData);
     }
@@ -99,8 +99,8 @@ public class Player : BaseCharacter
     {
         if(actionData.range.rangeType == RangeType.Target)
         {
-            if (targetPosition == null) return;
-            Move((Vector2Int)targetPosition, onResolved);
+            if (_targetPosition == null) return;
+            Move((Vector2Int)_targetPosition, onResolved);
             return;
         }
         else
@@ -137,16 +137,16 @@ public class Player : BaseCharacter
                 onChoosed(tilePosition);
             });
         }
-        highlitedTiles = tiles;
+        _highlitedTiles = tiles;
     }
 
     private void ResetHighlightedTiles()
     {
-        foreach(TileObject tile in highlitedTiles)
+        foreach(TileObject tile in _highlitedTiles)
         {
             tile.RemoveHighlight();
         }
-        highlitedTiles.Clear();
+        _highlitedTiles.Clear();
     }
 
     protected virtual void PlayPush(ActionData actionData, Action onResolved)
@@ -167,14 +167,14 @@ public class Player : BaseCharacter
         {
             if (path.Count > 0)
             {
-                HexTilemap.Instance.GetHex(AxialPosition).SetOccupiedCharacter(null);
+                HexTilemap.Instance.GetTile(AxialPosition).SetOccupiedCharacter(null);
                 foreach (Node node in path)
                 {
-                    TileObject tile = HexTilemap.Instance.GetHex(node.nodePosition);
+                    TileObject tile = HexTilemap.Instance.GetTile(node.nodePosition);
                     transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, transform.position.z);
                     yield return new WaitForSeconds(Time.deltaTime * 500);
                 }
-                TileObject finalNode = HexTilemap.Instance.GetHex(path[path.Count - 1].nodePosition);
+                TileObject finalNode = HexTilemap.Instance.GetTile(path[path.Count - 1].nodePosition);
                 finalNode.SetOccupiedCharacter(this);
             }
         }
