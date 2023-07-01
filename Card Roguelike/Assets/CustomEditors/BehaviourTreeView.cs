@@ -52,6 +52,15 @@ public class BehaviourTreeView : GraphView
         {
             evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
         }
+
+        if(_tree is EnemyBehaviourTree)
+        {
+            types = TypeCache.GetTypesDerivedFrom<EnemyActionNode>();
+            foreach (var type in types)
+            {
+                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+            }
+        }
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)

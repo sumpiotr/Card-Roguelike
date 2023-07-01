@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Character;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,6 +16,9 @@ namespace Tilemap.Tile
         public Vector2Int axialPosition;
 
         private Action<Vector2Int> _onClick = null;
+
+        [SerializeField]
+        private BaseCharacter dummy;
 
 
         private void Start()
@@ -35,6 +37,11 @@ namespace Tilemap.Tile
             _occupyingCharacter = character;
             if(character == null)return;
             character.AxialPosition = axialPosition;
+        }
+
+        public BaseCharacter GetOccupyingCharacter()
+        {
+            return _occupyingCharacter;
         }
 
         public bool IsWalkable()
@@ -68,6 +75,11 @@ namespace Tilemap.Tile
         private void OnMouseDown()
         {
            if(_onClick != null) _onClick(axialPosition);
+            else
+            {
+                BaseCharacter dummyObject = Instantiate(dummy, transform.position, Quaternion.identity);
+                SetOccupiedCharacter(dummyObject);
+            }
         }
     }
 }

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8829240317021567727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7daf12d3e4e09d40a8ef414c4f73e81, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 373e064c07c2b1c488fc4127ed812400
+  position: {x: 0, y: 0}
+  child: {fileID: 1631187476343617492}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52af68d460b7ae42bffa3237d169f7f, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -8829240317021567727}
+  treeState: 0
+  nodes:
+  - {fileID: -8829240317021567727}
+  - {fileID: 1631187476343617492}
+  - {fileID: 6683606776802698562}
+--- !u!114 &1631187476343617492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9cdd9a729ae0f4fbe3aed5c9c34e47, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2e37080c60e318946b4d2b39f912d063
+  position: {x: 193.16252, y: -0.000006198883}
+  children: []
+--- !u!114 &6683606776802698562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cf09a2d0503e94f8474f43a2cc2a46, type: 3}
+  m_Name: CheckValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f9cf0b50790335b41b7001195d04fbcc
+  position: {x: 409.32257, y: -77.000015}
+  owner: {fileID: 0}
+  enemyValues: 0
+  option: 2
+  value: 1

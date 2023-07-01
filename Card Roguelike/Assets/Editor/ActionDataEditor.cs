@@ -44,7 +44,7 @@ public class ActionDataEditor : PropertyDrawer
                     break;
                 case ActionType.Buff:
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
-                    EditorGUI.PropertyField(position2, property.FindPropertyRelative("stat"));
+                    //EditorGUI.PropertyField(position2, property.FindPropertyRelative("stat"));
                     EditorGUI.PropertyField(position3, property.FindPropertyRelative("range"));
                     break;
                 case ActionType.Move:

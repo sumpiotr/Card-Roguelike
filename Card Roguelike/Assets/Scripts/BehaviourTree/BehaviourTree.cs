@@ -34,6 +34,11 @@ public class BehaviourTree : ScriptableObject
         return node;
     }
 
+    protected virtual void OnNodeCreated(Node node)
+    {
+
+    }
+
     public void RemoveNode(Node node)
     {
         nodes.Remove(node);

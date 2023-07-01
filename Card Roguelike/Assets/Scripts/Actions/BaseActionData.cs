@@ -1,4 +1,3 @@
-using Character;
 using UnityEngine;
 
 namespace Actions
@@ -8,7 +7,6 @@ namespace Actions
     {
         public ActionType type;
         public int value;
-        public Stats stat;
         public RangeData range;
     }
 }

@@ -23,6 +23,7 @@ namespace Tilemap
 
         private Dictionary<Vector2Int, TileObject> _hexes = new Dictionary<Vector2Int, TileObject>();
 
+
         private void Awake()
         {
             if (Instance != null) return;
@@ -205,6 +206,31 @@ namespace Tilemap
             return tilesInRange;
         }
 
+
+        public List<TileObject> GetOccupiedTileObjectsInRange(Vector2Int startPosition, int minRange, int maxRange)
+        {
+            List<TileObject> tilesInRange = new List<TileObject>();
+            for (int dx = -maxRange; dx <= maxRange; dx++)
+            {
+                for (int dy = Mathf.Max(-maxRange, -dx - maxRange); dy <= Mathf.Min(maxRange, -dx + maxRange); dy++)
+                {
+                    Vector2Int currentPos = new Vector2Int(startPosition.x + dx, startPosition.y + dy);
+                    if (!_hexes.ContainsKey(currentPos)) continue;
+                    float distance = AxialDistance(startPosition, currentPos);
+                    if (distance >= minRange && distance <= maxRange)
+                    {
+                        if (_hexes.ContainsKey(currentPos))
+                        {
+                            TileObject tile = _hexes[currentPos];
+                            if (!tile.IsEmpty()) tilesInRange.Add(tile);
+                        }
+                    }
+                }
+            }
+
+            return tilesInRange;
+        }
+
         public List<TileObject> GetWalkableAndEmptyTileObjectsInLines(Vector2Int startPosition, int range)
         {
             List<TileObject> hexesInRange = new List<TileObject>();
@@ -239,7 +265,9 @@ namespace Tilemap
 
 
 
-        public static float AxialDistance(Vector2Int a, Vector2Int b) {
+
+
+        public static int AxialDistance(Vector2Int a, Vector2Int b) {
             Vector2Int vec = a - b;
             return (Mathf.Abs(vec.x)
               + Mathf.Abs(vec.x + vec.y)

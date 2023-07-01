@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: 
   cards:
-  - count: 5
+  - count: 3
     item: {fileID: 11400000, guid: a8a2f5b09e887484e80d6508e0f5aaa3, type: 2}
+  - count: 5
+    item: {fileID: 11400000, guid: fba5cd898d9bd734eb9d380bf8e34dc3, type: 2}

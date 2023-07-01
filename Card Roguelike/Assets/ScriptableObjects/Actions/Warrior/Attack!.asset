@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f8c8f24e359d9a4897f83368e4919c1, type: 3}
-  m_Name: Shot
+  m_Script: {fileID: 11500000, guid: d13a17c81f1f3444fb05dda42e608597, type: 3}
+  m_Name: Attack!
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 0
+  image: {fileID: 21300000, guid: ec863b8cd873c1e418a8497085ef0d6a, type: 3}
+  cardName: Attack!
+  description: Deal 5 dmg to enemy in range 1-2
   actions:
   - type: 0
-    value: 8
-    stat: 0
+    value: 5
     range:
-      rangeType: 1
-      minRange: 3
-      maxRange: 5
+      rangeType: 3
+      minRange: 1
+      maxRange: 2
+      source: 0
       multipleTargets: 0

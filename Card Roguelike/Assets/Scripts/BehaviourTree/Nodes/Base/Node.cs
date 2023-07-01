@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Node : ScriptableObject
 {
-    public NodeState state = NodeState.Running;
-    public bool started;
-    public string guid;
-    public Vector2 position;
+    [HideInInspector] public NodeState state = NodeState.Running;
+    [HideInInspector] public bool started;
+    [HideInInspector] public string guid;
+    [HideInInspector] public Vector2 position;
     public NodeState Update()
     {
         if (!started)

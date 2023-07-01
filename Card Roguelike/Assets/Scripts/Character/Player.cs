@@ -92,7 +92,23 @@ public class Player : BaseCharacter
 
     protected virtual void PlayAttack(ActionData actionData, Action onResolved)
     {
-        onResolved();
+        switch (actionData.range.rangeType)
+        {
+            case RangeType.Target:
+                if (_targetPosition == null) break;
+                Attack((Vector2Int)_targetPosition, actionData.value);
+                onResolved();
+                break;
+            case RangeType.Line:
+                ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
+                {
+                    Attack(enemyPosition, actionData.value);
+                    onResolved();
+                });
+                break;
+        }
+
+        
     }
 
     protected virtual void PlayMove(ActionData actionData, Action onResolved)
@@ -132,6 +148,25 @@ public class Player : BaseCharacter
         {
             if (AStar.findPath(HexTilemap.Instance, AxialPosition, tile.axialPosition, rangeData.maxRange) == null) continue;
             tile.SetHighlight(Color.green, (Vector2Int tilePosition) =>
+            {
+                ResetHighlightedTiles();
+                onChoosed(tilePosition);
+            });
+        }
+        _highlitedTiles = tiles;
+    }
+
+    private void ChooseAttackTarget (RangeData rangeData, Action<Vector2Int> onChoosed)
+    {
+        List<TileObject> tiles = new List<TileObject>();
+        tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, rangeData.minRange, rangeData.maxRange);
+                
+       
+
+        foreach (TileObject tile in tiles)
+        {
+            if(!CanHit(tile.axialPosition)) continue;
+            tile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
             {
                 ResetHighlightedTiles();
                 onChoosed(tilePosition);
@@ -180,5 +215,13 @@ public class Player : BaseCharacter
         }
         callback();
 
+    }
+
+    private void Attack(Vector2Int enemyPosition, int amount)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(enemyPosition);
+        if (tile == null) return;
+        if (tile.IsEmpty()) return;
+        tile.GetOccupyingCharacter().TakeDamage(amount);
     }
 }
