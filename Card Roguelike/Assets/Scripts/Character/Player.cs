@@ -106,6 +106,18 @@ public class Player : BaseCharacter
                     onResolved();
                 });
                 break;
+            case RangeType.Area:
+                List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, actionData.range.minRange, actionData.range.maxRange);
+                foreach (TileObject tile in tiles)
+                {
+                    if (!CanHit(tile.axialPosition, true)) continue;
+                    Attack(tile.axialPosition, actionData.value);
+                }
+                onResolved();
+                break;
+            default:
+                onResolved();
+                return;
         }
 
         

@@ -14,7 +14,7 @@ public class BaseCharacter : MonoBehaviour, ICharacter
     public int Health { get => health; set => health = value; }
 
 
-    public bool CanHit(Vector2Int position)
+    public bool CanHit(Vector2Int position, bool hitThroughCharacters = false)
     {
         TileObject tile1 = HexTilemap.Instance.GetTile(AxialPosition);
         TileObject tile2 = HexTilemap.Instance.GetTile(position);
@@ -31,7 +31,8 @@ public class BaseCharacter : MonoBehaviour, ICharacter
             TileObject tile = hit2.transform.gameObject.GetComponent<TileObject>();
             if (tile == null) continue;
             if (tile == tile1 || tile == tile2) continue;
-            if (!tile.IsWalkable() || !tile.IsEmpty()) return false;
+            if (!tile.IsWalkable()) return false;
+            if (!tile.IsEmpty() && !hitThroughCharacters) return false;
         }
 
         return true;
