@@ -7,19 +7,19 @@ using UnityEngine;
 
 public class AStar 
 {
-    public static List<Node> findPath(HexTilemap grid, Vector2Int startPosition, Vector2Int targetPosition, int maxPathLength = -1)
+    public static List<PathNode> findPath(HexTilemap grid, Vector2Int startPosition, Vector2Int targetPosition, int maxPathLength = -1)
     {
-        Node currentNode = null;
-        List<Node> openList = new List<Node>();
-        List<Node> closedList = new List<Node>();
+        PathNode currentNode = null;
+        List<PathNode> openList = new List<PathNode>();
+        List<PathNode> closedList = new List<PathNode>();
 
 
-        openList.Add(new Node(startPosition, targetPosition, startPosition));
+        openList.Add(new PathNode(startPosition, targetPosition, startPosition));
 
         while (openList.Count > 0)
         {
-            Node lowest = openList[0];
-            foreach (Node node in openList)
+            PathNode lowest = openList[0];
+            foreach (PathNode node in openList)
             {
                 if (node.fCost < lowest.fCost) lowest = node;
             }
@@ -44,8 +44,8 @@ public class AStar
                 TileObject tile = grid.GetTile(nodePosition);
                 if (getNodeByPosition(closedList, nodePosition) != null) continue;
                 if (!tile.IsEmpty() && nodePosition != targetPosition) continue;
-                Node adjacentedNode = getNodeByPosition(openList, nodePosition);
-                if (adjacentedNode == null) adjacentedNode = new Node(nodePosition, targetPosition, startPosition);
+                PathNode adjacentedNode = getNodeByPosition(openList, nodePosition);
+                if (adjacentedNode == null) adjacentedNode = new PathNode(nodePosition, targetPosition, startPosition);
                 if (openList.Contains(adjacentedNode))
                 {
                     float tentativeGCost = currentNode.gCost + Vector2Int.Distance(currentNode.nodePosition, adjacentedNode.nodePosition);
@@ -68,20 +68,20 @@ public class AStar
         return null;
     }
 
-    private static Node getNodeByPosition(List<Node> nodeList, Vector2Int position)
+    private static PathNode getNodeByPosition(List<PathNode> nodeList, Vector2Int position)
     {
-        foreach (Node node in nodeList)
+        foreach (PathNode node in nodeList)
         {
             if (node.nodePosition == position) return node;
         }
         return null;
     }
 
-    private static List<Node> GetPathFromNode(Node endNode)
+    private static List<PathNode> GetPathFromNode(PathNode endNode)
     {
         if (endNode.previousNode == null) return null;
-        List<Node> path = new List<Node>();
-        Node currentNode = endNode;
+        List<PathNode> path = new List<PathNode>();
+        PathNode currentNode = endNode;
         while (currentNode.previousNode != null)
         {
             path.Add(currentNode);
@@ -91,12 +91,12 @@ public class AStar
         return path;
     }
 
-    private static int getPathLength(Node endNode)
+    private static int getPathLength(PathNode endNode)
     {
         if (endNode.previousNode == null) return 0;
-        List<Node> path = new List<Node>();
+        List<PathNode> path = new List<PathNode>();
         path.Add(endNode);
-        Node currentNode = endNode;
+        PathNode currentNode = endNode;
         while (currentNode.previousNode != null)
         {
             path.Add(currentNode);
@@ -119,7 +119,7 @@ public class AStar
     }*/
 }
 
-public class Node
+public class PathNode
 {
     public float fCost;
     public float gCost;
@@ -127,11 +127,11 @@ public class Node
 
     public Vector2Int nodePosition;
 
-    public Node previousNode;
+    public PathNode previousNode;
 
-    public Node(Vector2Int nodePosition) { this.nodePosition = nodePosition; }
+    public PathNode(Vector2Int nodePosition) { this.nodePosition = nodePosition; }
 
-    public Node(Vector2Int nodePosition, Vector2Int targetNodePosition, Vector2Int startNodePosition, Node previousNode = null)
+    public PathNode(Vector2Int nodePosition, Vector2Int targetNodePosition, Vector2Int startNodePosition, PathNode previousNode = null)
     {
         this.gCost = HexTilemap.AxialDistance(startNodePosition, nodePosition);
         this.hCost = HexTilemap.AxialDistance(nodePosition, targetNodePosition);

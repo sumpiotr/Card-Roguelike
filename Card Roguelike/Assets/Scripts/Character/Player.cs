@@ -161,14 +161,14 @@ public class Player : BaseCharacter
 
     private IEnumerator Move(Vector2Int target, Action callback)
     {
-        List<Node> path = AStar.findPath(HexTilemap.Instance, AxialPosition, target);
+        List<PathNode> path = AStar.findPath(HexTilemap.Instance, AxialPosition, target);
         Debug.Log(path == null);
         if (path != null)
         {
             if (path.Count > 0)
             {
                 HexTilemap.Instance.GetTile(AxialPosition).SetOccupiedCharacter(null);
-                foreach (Node node in path)
+                foreach (PathNode node in path)
                 {
                     TileObject tile = HexTilemap.Instance.GetTile(node.nodePosition);
                     transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, transform.position.z);
