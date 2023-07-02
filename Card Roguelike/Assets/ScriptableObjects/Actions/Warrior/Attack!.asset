@@ -17,10 +17,10 @@ MonoBehaviour:
   cardName: Attack!
   description: Deal 5 dmg to enemy in range 1-2
   actions:
-  - type: 0
-    value: 5
+  - type: 5
+    value: 1
     range:
-      rangeType: 2
+      rangeType: 3
       minRange: 1
       maxRange: 5
       source: 1

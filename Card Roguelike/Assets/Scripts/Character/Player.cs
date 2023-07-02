@@ -8,10 +8,11 @@ using Random = UnityEngine.Random;
 using Tilemap.Tile;
 using Tilemap;
 using UnityEngine.Tilemaps;
+using Unity.VisualScripting;
 
 public class Player : BaseCharacter
 {
-
+    //TO DO ADD CARDS Validation
     const int HAND_SIZE = 5;
 
     [SerializeField]
@@ -123,6 +124,25 @@ public class Player : BaseCharacter
         
     }
 
+    private void ChooseAttackTarget(RangeData rangeData, Action<Vector2Int> onChoosed)
+    {
+        List<TileObject> tiles = new List<TileObject>();
+        tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, rangeData.minRange, rangeData.maxRange);
+
+
+
+        foreach (TileObject tile in tiles)
+        {
+            if (!CanHit(tile.axialPosition)) continue;
+            tile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
+            {
+                ResetHighlightedTiles();
+                onChoosed(tilePosition);
+            });
+        }
+        _highlitedTiles = tiles;
+    }
+
     protected virtual void PlayMove(ActionData actionData, Action onResolved)
     {
         if(actionData.range.rangeType == RangeType.Target)
@@ -168,25 +188,6 @@ public class Player : BaseCharacter
         _highlitedTiles = tiles;
     }
 
-    private void ChooseAttackTarget (RangeData rangeData, Action<Vector2Int> onChoosed)
-    {
-        List<TileObject> tiles = new List<TileObject>();
-        tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, rangeData.minRange, rangeData.maxRange);
-                
-       
-
-        foreach (TileObject tile in tiles)
-        {
-            if(!CanHit(tile.axialPosition)) continue;
-            tile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
-            {
-                ResetHighlightedTiles();
-                onChoosed(tilePosition);
-            });
-        }
-        _highlitedTiles = tiles;
-    }
-
     private void ResetHighlightedTiles()
     {
         foreach(TileObject tile in _highlitedTiles)
@@ -198,8 +199,35 @@ public class Player : BaseCharacter
 
     protected virtual void PlayPush(ActionData actionData, Action onResolved)
     {
+        switch (actionData.range.rangeType)
+        {
+            case RangeType.Target:
+                if (_targetPosition == null) break;
+                Push((Vector2Int)_targetPosition, actionData.value, onResolved);
+                break;
+            case RangeType.Line:
+                ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
+                {
+                    Push(enemyPosition, actionData.value, onResolved);
+                });
+                break;
+           /* case RangeType.Area:
+                List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, actionData.range.minRange, actionData.range.maxRange);
+                foreach (TileObject tile in tiles)
+                {
+                    if (!CanHit(tile.axialPosition, true)) continue;
+                    Attack(tile.axialPosition, actionData.value);
+                }
+                onResolved();
+                break;*/
+            default:
+                onResolved();
+                return;
+        }
         onResolved();
     }
+
+    
 
     protected virtual void PlayBuff(ActionData actionData, Action onResolved)
     {
@@ -235,5 +263,37 @@ public class Player : BaseCharacter
         if (tile == null) return;
         if (tile.IsEmpty()) return;
         tile.GetOccupyingCharacter().TakeDamage(amount);
+    }
+
+    private void Push(Vector2Int enemyPosition, int amount, Action onEnd)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(enemyPosition);
+        if (tile == null) return;
+        if (tile.IsEmpty()) return;
+        BaseCharacter enemy = tile.GetOccupyingCharacter();
+        List<TileObject> tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
+        if(tiles.Count == 0)
+        {
+            amount--;
+            while(amount > 0)
+            {
+                tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
+                if (tiles.Count > 0) break;
+                amount--;
+            }
+        }
+        _highlitedTiles = tiles;
+        foreach (TileObject retreatTile in tiles)
+        {
+            retreatTile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
+            {
+                TileObject selectedTile = HexTilemap.Instance.GetTile(tilePosition);
+                selectedTile.SetOccupiedCharacter(enemy);
+                tile.SetOccupiedCharacter(null);
+                enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+                ResetHighlightedTiles();
+                onEnd();
+            });
+        }
     }
 }

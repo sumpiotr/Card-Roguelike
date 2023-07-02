@@ -15,7 +15,7 @@ C:/Users/Piotr/Documents/GitHub/Card-Roguelike/Card Roguelike
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50893
+64942
 Successfully changed project path to: C:/Users/Piotr/Documents/GitHub/Card-Roguelike/Card Roguelike
 C:/Users/Piotr/Documents/GitHub/Card-Roguelike/Card Roguelike
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/Piotr/Documents/GitHub/Card-Roguelike/Card Roguelike
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 70.93 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 64.48 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.9f1 (ad3870b89536)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56356
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56944
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008166 seconds.
+Registered in 0.006553 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 69.22 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 63.14 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.515 seconds
+- Completed reload, in  0.447 seconds
 Domain Reload Profiling:
-	ReloadAssembly (515ms)
-		BeginReloadAssembly (62ms)
+	ReloadAssembly (447ms)
+		BeginReloadAssembly (52ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (363ms)
-			LoadAssemblies (60ms)
+		EndReloadAssembly (318ms)
+			LoadAssemblies (50ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (77ms)
+			SetupTypeCache (64ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (19ms)
-			SetupLoadedEditorAssemblies (227ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (202ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (47ms)
+				InitializePlatformSupportModulesInManaged (39ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
+				RefreshPlugins (63ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (77ms)
-				ProcessInitializeOnLoadMethodAttributes (33ms)
+				ProcessInitializeOnLoadAttributes (70ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009007 seconds.
+Registered in 0.007574 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 74.83 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 68.54 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.092 seconds
+- Completed reload, in  0.996 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1093ms)
-		BeginReloadAssembly (202ms)
+	ReloadAssembly (997ms)
+		BeginReloadAssembly (186ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (133ms)
-		EndReloadAssembly (789ms)
-			LoadAssemblies (77ms)
+			CreateAndSetChildDomain (117ms)
+		EndReloadAssembly (724ms)
+			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (219ms)
+			SetupTypeCache (185ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (405ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (382ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (75ms)
-				BeforeProcessingInitializeOnLoad (84ms)
-				ProcessInitializeOnLoadAttributes (188ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
-				AfterProcessingInitializeOnLoad (11ms)
+				RefreshPlugins (69ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (179ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.80 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4124 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 38 unused Assets / (55.6 KB). Loaded Objects now: 4586.
 Memory consumption went from 154.7 MB to 154.6 MB.
-Total: 3.208800 ms (FindLiveObjects: 0.297100 ms CreateObjectMapping: 0.200000 ms MarkObjects: 2.639000 ms  DeleteObjects: 0.072000 ms)
+Total: 3.095600 ms (FindLiveObjects: 0.333000 ms CreateObjectMapping: 0.099000 ms MarkObjects: 2.589200 ms  DeleteObjects: 0.073000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,236 +162,56 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 999502.925470 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2a700b16ae6cdf71ddaad231721b5c') in 0.024234 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 149.234318 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3cb031c7a7335767fc1c9ebd4e8ef3') in 0.002349 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.001367 seconds.
+  Time since last request: 1085244.173144 seconds.
   path: Assets/Prefabs/Player.prefab
   artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8ff8f19d7baa4273c0bf997bc6ddb7f') in 0.067594 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 31.161933 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b882eddf782eb0418728076c9546418b') in 0.001980 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f773cb22e8d7839239920fcf52889eb7') in 0.015420 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.189462 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9716fbb937b4f65f64c4185ecc4e706') in 0.002116 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d40638ffc4aadd1aff4191af4cb746f') in 0.009341 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 85.042216 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59988e85e7b3f02be733d2e6b6ca4b3c') in 0.002302 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.002262 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78511d5ed8fcd12799faca1ada40e6e0') in 0.009118 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.944165 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c850dea9a792dbdd5587de6cdea9ae39') in 0.002163 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9a26127caf4ece66b841965a716b3b2') in 0.009173 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 34.229146 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10ebbeab555fff6f6f981478df7e2ad4') in 0.005116 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296fb5fddf491121fbfe867441289999') in 0.012171 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.583308 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66e2da759fe159c18bfaa22aac5a200') in 0.002367 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.002648 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d816f1588e642efb86e61739c505ea') in 0.010700 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.217386 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f32be4b20c9789e863c015946b8e8177') in 0.002423 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.006004 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfb153eae8bbf8c48e4f3469d862a5ea') in 0.009892 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.053051 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279508907daee2775a6319fbe5020612') in 0.002322 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f5cb990314b0f582537ec671b855dc4') in 0.012721 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.293076 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '550580e90d5fb3dcd8848fb4e5cd0787') in 0.002037 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000730 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b25489842d0231e5d925a8ac489f42c') in 0.008908 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 45.424062 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7913948421319a17871dba22e264df63') in 0.002349 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a44db896c627f5d6e44d7749c7c214') in 0.007790 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 94.213429 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20915cd72f8b1d6a707bbafb0764db2e') in 0.002197 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb774d6779a7560a825ad03623ff9ece') in 0.008258 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 43.944002 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ad9137c65d25c87afb58c4421fa5fac') in 0.002353 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000083 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a192d2586869494e2962b66ae9c6b273') in 0.008509 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.190441 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e876776f9d2f6378d8400bdb5fdf7293') in 0.002331 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b8253e880495ef3a25107f57f52133a') in 0.009997 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 93.685981 seconds.
-  path: Assets/Scripts/Character/Player.cs
-  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bc958b2c8f7fc443787bd94007896d4') in 0.002071 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d641695d915d403ba524fce9f608dfa') in 0.008835 seconds 
+Start importing Assets/Prefabs/Player.prefab using Guid(74712d2e4ae14d34ea2e7665e62d351e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45550fa9508a6297c2e863546f48343a') in 0.104006 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008049 seconds.
+Registered in 0.006909 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.76 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.713 seconds
+- Completed reload, in  0.719 seconds
 Domain Reload Profiling:
-	ReloadAssembly (714ms)
+	ReloadAssembly (719ms)
 		BeginReloadAssembly (108ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (536ms)
-			LoadAssemblies (70ms)
+		EndReloadAssembly (541ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (150ms)
+			SetupTypeCache (147ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (255ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (262ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (143ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (149ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.03 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.98 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4596.
 Memory consumption went from 157.1 MB to 157.1 MB.
-Total: 2.990900 ms (FindLiveObjects: 0.239200 ms CreateObjectMapping: 0.145100 ms MarkObjects: 2.586500 ms  DeleteObjects: 0.019400 ms)
+Total: 2.895300 ms (FindLiveObjects: 0.252100 ms CreateObjectMapping: 0.156500 ms MarkObjects: 2.465600 ms  DeleteObjects: 0.020600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -404,126 +224,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 26.752054 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426e63e379cb0f04e55b7f93abc0ecf2') in 0.048566 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.258965 seconds.
-  path: Assets/Prefabs
-  artifactKey: Guid(705200ee45336f845be6c480e419280b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs using Guid(705200ee45336f845be6c480e419280b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881ce141de8c5bd0621f4007bc872cb8') in 0.006384 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 183.985933 seconds.
-  path: Assets/Prefabs/dummy.png
-  artifactKey: Guid(2fb0ba232b558494a859978afc0ed8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/dummy.png using Guid(2fb0ba232b558494a859978afc0ed8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f61b7a884549792b0b2a270bdb32bc7') in 0.115984 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.255455 seconds.
-  path: Assets/Art
-  artifactKey: Guid(444f407a511aa684caa35aaf2b7299be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art using Guid(444f407a511aa684caa35aaf2b7299be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee6e5476c45a1a15ee25ad246382433e') in 0.008039 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.510932 seconds.
-  path: Assets/Art/dummy.png
-  artifactKey: Guid(2fb0ba232b558494a859978afc0ed8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/dummy.png using Guid(2fb0ba232b558494a859978afc0ed8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dab5fb84bea2f8f0b62cca3f7633fba6') in 0.048541 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.649200 seconds.
-  path: Assets/Prefabs/TrainingDummy.prefab
-  artifactKey: Guid(ce2743b2e2422684a93ffc6cf5c70713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/TrainingDummy.prefab using Guid(ce2743b2e2422684a93ffc6cf5c70713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd14886b214cc2e3122b79366a2443bb6') in 0.014236 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 27.951066 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4474a05c242da979e44140defd3a3d2') in 0.012531 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006563 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.719 seconds
-Domain Reload Profiling:
-	ReloadAssembly (719ms)
-		BeginReloadAssembly (105ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (543ms)
-			LoadAssemblies (73ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (155ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (253ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (142ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.18 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4602.
-Memory consumption went from 157.2 MB to 157.1 MB.
-Total: 2.850800 ms (FindLiveObjects: 0.256300 ms CreateObjectMapping: 0.135500 ms MarkObjects: 2.444500 ms  DeleteObjects: 0.013400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 5.205215 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '244064110aa988260bf95302c60dfcde') in 0.046880 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.481286 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f1e45c344db45ebf2c7991896c8b2c') in 0.021936 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.117183 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ba28a1cebc1bb2fc18c26ab44d4dee0') in 0.011975 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006474 seconds.
+Registered in 0.006485 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -532,40 +235,325 @@ Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.725 seconds
+- Completed reload, in  0.712 seconds
 Domain Reload Profiling:
-	ReloadAssembly (726ms)
-		BeginReloadAssembly (108ms)
+	ReloadAssembly (713ms)
+		BeginReloadAssembly (104ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (547ms)
-			LoadAssemblies (75ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (540ms)
+			LoadAssemblies (72ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (154ms)
+			SetupTypeCache (149ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (257ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (258ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (146ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (25.6 KB). Loaded Objects now: 4599.
+Memory consumption went from 157.1 MB to 157.1 MB.
+Total: 2.594800 ms (FindLiveObjects: 0.238400 ms CreateObjectMapping: 0.091800 ms MarkObjects: 2.249900 ms  DeleteObjects: 0.014300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007214 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.714 seconds
+Domain Reload Profiling:
+	ReloadAssembly (715ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (539ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (150ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (254ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
 				ProcessInitializeOnLoadAttributes (143ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4602.
+Memory consumption went from 157.1 MB to 157.1 MB.
+Total: 2.880100 ms (FindLiveObjects: 0.241200 ms CreateObjectMapping: 0.153300 ms MarkObjects: 2.468100 ms  DeleteObjects: 0.016900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008459 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.729 seconds
+Domain Reload Profiling:
+	ReloadAssembly (730ms)
+		BeginReloadAssembly (107ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (551ms)
+			LoadAssemblies (76ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (150ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (266ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (148ms)
 				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.11 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4605.
+Memory consumption went from 157.1 MB to 157.1 MB.
+Total: 2.635200 ms (FindLiveObjects: 0.250900 ms CreateObjectMapping: 0.099400 ms MarkObjects: 2.270800 ms  DeleteObjects: 0.013700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007677 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.773 seconds
+Domain Reload Profiling:
+	ReloadAssembly (773ms)
+		BeginReloadAssembly (107ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (594ms)
+			LoadAssemblies (78ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (157ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (287ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.47 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4608.
+Memory consumption went from 157.2 MB to 157.1 MB.
+Total: 3.487000 ms (FindLiveObjects: 0.373200 ms CreateObjectMapping: 0.139300 ms MarkObjects: 2.950100 ms  DeleteObjects: 0.023700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009081 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.770 seconds
+Domain Reload Profiling:
+	ReloadAssembly (770ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (593ms)
+			LoadAssemblies (78ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (163ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (281ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4611.
+Memory consumption went from 157.2 MB to 157.1 MB.
+Total: 3.185700 ms (FindLiveObjects: 0.260600 ms CreateObjectMapping: 0.156000 ms MarkObjects: 2.750700 ms  DeleteObjects: 0.017700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007529 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.741 seconds
+Domain Reload Profiling:
+	ReloadAssembly (742ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (552ms)
+			LoadAssemblies (85ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (148ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (267ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.23 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.16 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4605.
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4614.
 Memory consumption went from 157.2 MB to 157.1 MB.
-Total: 2.947700 ms (FindLiveObjects: 0.255800 ms CreateObjectMapping: 0.147200 ms MarkObjects: 2.521900 ms  DeleteObjects: 0.022100 ms)
+Total: 2.800500 ms (FindLiveObjects: 0.234800 ms CreateObjectMapping: 0.141800 ms MarkObjects: 2.406200 ms  DeleteObjects: 0.017200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -579,14 +567,728 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.555653 seconds.
-  path: Assets/Prefabs/DungeonFloor.prefab
-  artifactKey: Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DungeonFloor.prefab using Guid(89f6a5362d7e893499d2c5e358d78428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed155254bf5207f98ce7e02b6127e4a') in 0.045763 seconds 
+  Time since last request: 561.384406 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9d567d1a4aea925d37bb21d7f39b22') in 0.011121 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006321 seconds.
+Registered in 0.006447 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.714 seconds
+Domain Reload Profiling:
+	ReloadAssembly (714ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (538ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (147ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (258ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (145ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4617.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.873000 ms (FindLiveObjects: 0.268000 ms CreateObjectMapping: 0.151500 ms MarkObjects: 2.434300 ms  DeleteObjects: 0.018500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 48.576241 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffa6af2448fdb41c46a9c515e567d948') in 0.007895 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007321 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.717 seconds
+Domain Reload Profiling:
+	ReloadAssembly (718ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (148ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (259ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (144ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.80 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4620.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.789100 ms (FindLiveObjects: 0.287000 ms CreateObjectMapping: 0.147500 ms MarkObjects: 2.337400 ms  DeleteObjects: 0.016800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46.975181 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42380dbf3a73d71a6997849a1e91fece') in 0.007497 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006758 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.710 seconds
+Domain Reload Profiling:
+	ReloadAssembly (710ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (538ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (146ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (257ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (142ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4623.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.751200 ms (FindLiveObjects: 0.217700 ms CreateObjectMapping: 0.130400 ms MarkObjects: 2.382700 ms  DeleteObjects: 0.020000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 33.182696 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9150613723d49678d438318f3c70f40') in 0.007762 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006669 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.719 seconds
+Domain Reload Profiling:
+	ReloadAssembly (720ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (70ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (142ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (267ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (151ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4626.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.645300 ms (FindLiveObjects: 0.242900 ms CreateObjectMapping: 0.094400 ms MarkObjects: 2.290900 ms  DeleteObjects: 0.016700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 5.124509 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '014aba6b89b70655d68dbcb1b05d10a1') in 0.007822 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007554 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.728 seconds
+Domain Reload Profiling:
+	ReloadAssembly (729ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (555ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (152ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (264ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (148ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.91 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4629.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.490300 ms (FindLiveObjects: 0.228300 ms CreateObjectMapping: 0.080900 ms MarkObjects: 2.167500 ms  DeleteObjects: 0.013000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007006 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.749 seconds
+Domain Reload Profiling:
+	ReloadAssembly (750ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (572ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (153ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (276ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4632.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.831700 ms (FindLiveObjects: 0.279400 ms CreateObjectMapping: 0.094700 ms MarkObjects: 2.442500 ms  DeleteObjects: 0.014400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008975 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.756 seconds
+Domain Reload Profiling:
+	ReloadAssembly (756ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (579ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (153ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (281ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (155ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4635.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 3.338000 ms (FindLiveObjects: 0.295500 ms CreateObjectMapping: 0.238200 ms MarkObjects: 2.778400 ms  DeleteObjects: 0.024800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007338 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.704 seconds
+Domain Reload Profiling:
+	ReloadAssembly (705ms)
+		BeginReloadAssembly (104ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (530ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (141ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (255ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (143ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4638.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 2.985200 ms (FindLiveObjects: 0.244800 ms CreateObjectMapping: 0.140400 ms MarkObjects: 2.578700 ms  DeleteObjects: 0.020900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007964 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.724 seconds
+Domain Reload Profiling:
+	ReloadAssembly (724ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (147ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (261ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (147ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.8 KB). Loaded Objects now: 4641.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 3.013800 ms (FindLiveObjects: 0.322600 ms CreateObjectMapping: 0.104800 ms MarkObjects: 2.571100 ms  DeleteObjects: 0.014600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008158 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.780 seconds
+Domain Reload Profiling:
+	ReloadAssembly (781ms)
+		BeginReloadAssembly (101ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (606ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (168ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (287ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4644.
+Memory consumption went from 157.2 MB to 157.2 MB.
+Total: 3.078200 ms (FindLiveObjects: 0.382900 ms CreateObjectMapping: 0.100600 ms MarkObjects: 2.579400 ms  DeleteObjects: 0.015000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008189 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.779 seconds
+Domain Reload Profiling:
+	ReloadAssembly (779ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (162ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (284ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (158ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4647.
+Memory consumption went from 157.3 MB to 157.2 MB.
+Total: 3.653100 ms (FindLiveObjects: 0.379600 ms CreateObjectMapping: 0.211600 ms MarkObjects: 3.028700 ms  DeleteObjects: 0.032100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008569 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.779 seconds
+Domain Reload Profiling:
+	ReloadAssembly (779ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (596ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (160ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (283ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4650.
+Memory consumption went from 157.3 MB to 157.2 MB.
+Total: 2.921100 ms (FindLiveObjects: 0.249700 ms CreateObjectMapping: 0.081600 ms MarkObjects: 2.573700 ms  DeleteObjects: 0.015700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 159.483698 seconds.
+  path: Assets/Scripts/Character/Player.cs
+  artifactKey: Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Character/Player.cs using Guid(a9878b46cad44404baa15a9cb71cc536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ac49490a5461b07ba10c8c24280391') in 0.007883 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007546 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -595,40 +1297,97 @@ Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.86 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.778 seconds
+- Completed reload, in  0.792 seconds
 Domain Reload Profiling:
-	ReloadAssembly (779ms)
-		BeginReloadAssembly (107ms)
+	ReloadAssembly (792ms)
+		BeginReloadAssembly (118ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (595ms)
-			LoadAssemblies (77ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (599ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (163ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (283ms)
+			SetupTypeCache (158ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (290ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (17ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (157ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (71ms)
+				ProcessInitializeOnLoadAttributes (158ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 2.37 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4608.
-Memory consumption went from 157.2 MB to 157.2 MB.
-Total: 3.345000 ms (FindLiveObjects: 0.295000 ms CreateObjectMapping: 0.132900 ms MarkObjects: 2.895900 ms  DeleteObjects: 0.019700 ms)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4653.
+Memory consumption went from 157.3 MB to 157.3 MB.
+Total: 2.718200 ms (FindLiveObjects: 0.267900 ms CreateObjectMapping: 0.086100 ms MarkObjects: 2.347200 ms  DeleteObjects: 0.016100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007720 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Domain Reload Profiling:
+	ReloadAssembly (763ms)
+		BeginReloadAssembly (110ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (578ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (154ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (277ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4656.
+Memory consumption went from 157.3 MB to 157.3 MB.
+Total: 3.021200 ms (FindLiveObjects: 0.347900 ms CreateObjectMapping: 0.098600 ms MarkObjects: 2.559600 ms  DeleteObjects: 0.014300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -642,92 +1401,170 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.242435 seconds.
-  path: Assets/ScriptableObjects/Slime.asset
-  artifactKey: Guid(c2252c62bc7c7dd47b04aaab7f1337b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Slime.asset using Guid(c2252c62bc7c7dd47b04aaab7f1337b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c39ee64d63f91c19493afccb2a852de') in 0.027062 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.751328 seconds.
+  Time since last request: 25.161417 seconds.
   path: Assets/ScriptableObjects/Actions/Warrior/Attack!.asset
   artifactKey: Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Attack!.asset using Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65c8651c7420ecc9533110de234b6f6b') in 0.007548 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.074759 seconds.
-  path: Assets/ScriptableObjects/Actions/Warrior/Attack!.asset
-  artifactKey: Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Attack!.asset using Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0420902c92da6ffb2d88f28681a3d43') in 0.002204 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.514741 seconds.
-  path: Assets/ScriptableObjects/Actions/Warrior/Attack!.asset
-  artifactKey: Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Attack!.asset using Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '122f100fe10e6f8e5e7e279a9297ed0c') in 0.002516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.357524 seconds.
-  path: Assets/ScriptableObjects/Actions/Warrior/Warrior.asset
-  artifactKey: Guid(8dc87267b07bd744e929d04a1f2d83f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Warrior.asset using Guid(8dc87267b07bd744e929d04a1f2d83f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '560359352c62b82f0717b451aa1bfef2') in 0.007289 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.686276 seconds.
-  path: Assets/ScriptableObjects/Actions/Warrior/Warrior.asset
-  artifactKey: Guid(8dc87267b07bd744e929d04a1f2d83f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Warrior.asset using Guid(8dc87267b07bd744e929d04a1f2d83f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a9cca75e84e2509562d4b17b9f2089') in 0.002874 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.879227 seconds.
-  path: Assets/ScriptableObjects/Actions/Warrior/Attack!.asset
-  artifactKey: Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Actions/Warrior/Attack!.asset using Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76d455995f51368660892b651e9f148d') in 0.002555 seconds 
+Start importing Assets/ScriptableObjects/Actions/Warrior/Attack!.asset using Guid(fba5cd898d9bd734eb9d380bf8e34dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9b4b22d96b3ee307e73b5d653309aff') in 0.018859 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006487 seconds.
+Registered in 0.006508 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.72 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.758 seconds
+- Completed reload, in  0.741 seconds
 Domain Reload Profiling:
-	ReloadAssembly (758ms)
-		BeginReloadAssembly (106ms)
+	ReloadAssembly (741ms)
+		BeginReloadAssembly (105ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (28ms)
-		EndReloadAssembly (581ms)
-			LoadAssemblies (76ms)
+		EndReloadAssembly (565ms)
+			LoadAssemblies (73ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (166ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (271ms)
+			SetupTypeCache (149ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (272ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (153ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4659.
+Memory consumption went from 157.3 MB to 157.3 MB.
+Total: 2.785800 ms (FindLiveObjects: 0.278800 ms CreateObjectMapping: 0.083900 ms MarkObjects: 2.400700 ms  DeleteObjects: 0.021800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006967 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.710 seconds
+Domain Reload Profiling:
+	ReloadAssembly (710ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (532ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (143ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (255ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (153ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
+				ProcessInitializeOnLoadAttributes (142ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4662.
+Memory consumption went from 157.3 MB to 157.3 MB.
+Total: 2.781000 ms (FindLiveObjects: 0.223600 ms CreateObjectMapping: 0.091500 ms MarkObjects: 2.446800 ms  DeleteObjects: 0.018400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006392 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Piotr\Documents\GitHub\Card-Roguelike\Card Roguelike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.732 seconds
+Domain Reload Profiling:
+	ReloadAssembly (733ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (142ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (261ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (149ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.46 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.28 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4100 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (24.6 KB). Loaded Objects now: 4611.
-Memory consumption went from 157.2 MB to 157.2 MB.
-Total: 3.180500 ms (FindLiveObjects: 0.265600 ms CreateObjectMapping: 0.188900 ms MarkObjects: 2.702800 ms  DeleteObjects: 0.022100 ms)
+Unloading 25 unused Assets / (24.7 KB). Loaded Objects now: 4665.
+Memory consumption went from 157.3 MB to 157.3 MB.
+Total: 3.199900 ms (FindLiveObjects: 0.283100 ms CreateObjectMapping: 0.099500 ms MarkObjects: 2.801000 ms  DeleteObjects: 0.015500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 

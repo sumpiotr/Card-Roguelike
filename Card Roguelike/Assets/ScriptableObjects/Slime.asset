@@ -67,8 +67,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f9cf0b50790335b41b7001195d04fbcc
-  position: {x: 409.32257, y: -77.000015}
+  position: {x: 392.87, y: -112.90501}
   owner: {fileID: 0}
   enemyValues: 0
   option: 2
-  value: 1
+  value: 5
