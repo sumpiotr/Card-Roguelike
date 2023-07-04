@@ -2,12 +2,13 @@ namespace Actions
 {
     public enum ActionType
     {
-        Attack,
         ChooseAttackTarget,
-        Buff,
-        Move,
         ChooseMoveTarget,
-        Push
+        Attack,
+        Move,
+        Push,
+        Pull,
+        Buff,
     }
 }
 

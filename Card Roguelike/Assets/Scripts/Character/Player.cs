@@ -9,6 +9,7 @@ using Tilemap.Tile;
 using Tilemap;
 using UnityEngine.Tilemaps;
 using Unity.VisualScripting;
+using UnityEngine.WSA;
 
 public class Player : BaseCharacter
 {
@@ -21,9 +22,12 @@ public class Player : BaseCharacter
     private List<CardDataScriptableObject> _deck = new List<CardDataScriptableObject>();
     private List<CardDataScriptableObject> _discarded = new List<CardDataScriptableObject>();
 
-    private Nullable<Vector2Int> _targetPosition = null;
+    private List<Vector2Int> _targetsPositions = new List<Vector2Int>();
 
     private List<TileObject> _highlitedTiles = new List<TileObject>();
+
+
+
 
 
     private void Start()
@@ -74,6 +78,28 @@ public class Player : BaseCharacter
         ActionData actionData = actionSet[actionIndex];
         switch (actionData.type)
         {
+            case ActionType.ChooseAttackTarget:
+                if (actionData.range.rangeType == RangeType.Line)
+                {
+                    ChooseAttackTarget(actionData.range, (Vector2Int choosedPosition) =>
+                    {
+                        _targetsPositions.Clear();
+                        _targetsPositions.Add(choosedPosition);
+                    }, onActionResolved);
+                }
+                else if(actionData.range.rangeType == RangeType.Area)
+                {
+
+                }
+                break;
+            case ActionType.ChooseMoveTarget:
+                ChooseMoveTarget(actionData.range, (Vector2Int choosedPosition) =>
+                {
+                    _targetsPositions.Clear();
+                    _targetsPositions.Add(choosedPosition);
+                    onActionResolved();
+                });
+                break;
             case ActionType.Attack:
                 PlayAttack(actionData, onActionResolved);
                 break;
@@ -86,6 +112,9 @@ public class Player : BaseCharacter
             case ActionType.Push:
                 PlayPush(actionData, onActionResolved);
                 break;
+            case ActionType.Pull:
+                PlayPull(actionData, onActionResolved);
+                break;
             default:
                 break;
         }
@@ -96,25 +125,27 @@ public class Player : BaseCharacter
         switch (actionData.range.rangeType)
         {
             case RangeType.Target:
-                if (_targetPosition == null) break;
-                Attack((Vector2Int)_targetPosition, actionData.value);
+                foreach(Vector2Int position in _targetsPositions)
+                {
+                    Attack(position, actionData.value);
+                }
                 onResolved();
                 break;
             case RangeType.Line:
                 ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
                 {
                     Attack(enemyPosition, actionData.value);
-                    onResolved();
-                });
+                    _targetsPositions.Clear();
+                    _targetsPositions.Add(enemyPosition);
+                }, onResolved);
                 break;
             case RangeType.Area:
-                List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, actionData.range.minRange, actionData.range.maxRange);
-                foreach (TileObject tile in tiles)
+                _targetsPositions.Clear();
+                ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
                 {
-                    if (!CanHit(tile.axialPosition, true)) continue;
-                    Attack(tile.axialPosition, actionData.value);
-                }
-                onResolved();
+                    Attack(enemyPosition, actionData.value);
+                    _targetsPositions.Add(enemyPosition);
+                }, onResolved);
                 break;
             default:
                 onResolved();
@@ -124,37 +155,52 @@ public class Player : BaseCharacter
         
     }
 
-    private void ChooseAttackTarget(RangeData rangeData, Action<Vector2Int> onChoosed)
+    private void ChooseAttackTarget(RangeData rangeData, Action<Vector2Int> onChoosed, Action onResolved)
     {
         List<TileObject> tiles = new List<TileObject>();
         tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, rangeData.minRange, rangeData.maxRange);
 
 
-
-        foreach (TileObject tile in tiles)
+        if (rangeData.rangeType == RangeType.Line)
         {
-            if (!CanHit(tile.axialPosition)) continue;
-            tile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
+            foreach (TileObject tile in tiles)
             {
-                ResetHighlightedTiles();
-                onChoosed(tilePosition);
-            });
+                if (!CanHit(tile.axialPosition)) continue;
+                tile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
+                {
+                    ResetHighlightedTiles();
+                    onChoosed(tilePosition);
+                    onResolved();
+                });
+            }
+            _highlitedTiles = tiles;
         }
-        _highlitedTiles = tiles;
+        else if(rangeData.rangeType == RangeType.Area)
+        {
+            foreach (TileObject tile in tiles)
+            {
+                if (!CanHit(tile.axialPosition, true)) continue;
+                onChoosed(tile.axialPosition);
+            }
+            onResolved();
+        }
     }
 
     protected virtual void PlayMove(ActionData actionData, Action onResolved)
     {
         if(actionData.range.rangeType == RangeType.Target)
         {
-            if (_targetPosition == null) return;
-            Move((Vector2Int)_targetPosition, onResolved);
+
+            if (_targetsPositions.Count > 0) Move(_targetsPositions[0], onResolved);
+            else onResolved();
             return;
         }
         else
         {
             ChooseMoveTarget(actionData.range, (Vector2Int choosedPosition) =>
             {
+                _targetsPositions.Clear();
+                _targetsPositions.Add(choosedPosition);
                 IEnumerator moveCoroutine =  Move(choosedPosition, onResolved);
                 StartCoroutine(moveCoroutine);
             });
@@ -202,32 +248,81 @@ public class Player : BaseCharacter
         switch (actionData.range.rangeType)
         {
             case RangeType.Target:
-                if (_targetPosition == null) break;
-                Push((Vector2Int)_targetPosition, actionData.value, onResolved);
+                if(_targetsPositions.Count == 1) Push(_targetsPositions[0], actionData.value, onResolved);
+                else
+                {
+                    foreach(Vector2Int tilePosition in _targetsPositions)
+                    {
+                        RandomPush(tilePosition, actionData.value);
+                    }
+                    onResolved();
+                }
                 break;
             case RangeType.Line:
                 ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
                 {
                     Push(enemyPosition, actionData.value, onResolved);
-                });
+                }, () => { });
                 break;
-           /* case RangeType.Area:
-                List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, actionData.range.minRange, actionData.range.maxRange);
-                foreach (TileObject tile in tiles)
+           case RangeType.Area:
+
+                for(int i = actionData.range.maxRange; i >= actionData.range.minRange; i--)
                 {
-                    if (!CanHit(tile.axialPosition, true)) continue;
-                    Attack(tile.axialPosition, actionData.value);
+                    List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, i, i);
+                    foreach (TileObject tile in tiles)
+                    {
+                        if (!CanHit(tile.axialPosition, true)) continue;
+                        RandomPush(tile.axialPosition, actionData.value);
+                    }
                 }
                 onResolved();
-                break;*/
+                break;
             default:
                 onResolved();
                 return;
         }
-        onResolved();
     }
 
-    
+    protected virtual void PlayPull(ActionData actionData, Action onResolved)
+    {
+        switch (actionData.range.rangeType)
+        {
+            case RangeType.Target:
+                if (_targetsPositions.Count == 1) Pull(_targetsPositions[0], actionData.value, onResolved);
+                else
+                {
+                    foreach (Vector2Int tilePosition in _targetsPositions)
+                    {
+                        RandomPull(tilePosition, actionData.value);
+                    }
+                    onResolved();
+                }
+                break;
+            case RangeType.Line:
+                ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
+                {
+                    Pull(enemyPosition, actionData.value, onResolved);
+                }, () => { });
+                break;
+            case RangeType.Area:
+                for (int i = actionData.range.minRange; i <= actionData.range.maxRange; i++)
+                {
+                    List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, i, i);
+                    foreach (TileObject tile in tiles)
+                    {
+                        if (!CanHit(tile.axialPosition, true)) continue;
+                        RandomPull(tile.axialPosition, actionData.value);
+                    }
+                }
+                onResolved();
+                break;
+            default:
+                onResolved();
+                return;
+        }
+    }
+
+
 
     protected virtual void PlayBuff(ActionData actionData, Action onResolved)
     {
@@ -283,6 +378,17 @@ public class Player : BaseCharacter
             }
         }
         _highlitedTiles = tiles;
+
+        if(tiles.Count == 1)
+        {
+            TileObject selectedTile = tiles[0];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            onEnd();
+            return;
+        }
+
         foreach (TileObject retreatTile in tiles)
         {
             retreatTile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
@@ -296,4 +402,110 @@ public class Player : BaseCharacter
             });
         }
     }
+
+
+    private void RandomPush(Vector2Int enemyPosition, int amount)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(enemyPosition);
+        if (tile == null) return;
+        if (tile.IsEmpty()) return;
+        BaseCharacter enemy = tile.GetOccupyingCharacter();
+        List<TileObject> tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
+        if (tiles.Count == 0)
+        {
+            amount--;
+            while (amount > 0)
+            {
+                tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
+                if (tiles.Count > 0) break;
+                amount--;
+            }
+        }
+        _highlitedTiles = tiles;
+
+        if (tiles.Count == 0) return;
+
+        if (tiles.Count == 1)
+        {
+            TileObject selectedTile = tiles[0];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            return;
+        }
+        else
+        {
+            TileObject selectedTile = tiles[Random.Range(0, tiles.Count)];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            return;
+        }
+    }
+
+    private void Pull(Vector2Int enemyPosition, int amount, Action onEnd)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(enemyPosition);
+        if (tile == null) return;
+        if (tile.IsEmpty()) return;
+        BaseCharacter enemy = tile.GetOccupyingCharacter();
+        List<TileObject> tiles = enemy.GetAdvanceTiles(AxialPosition, amount, amount);
+        _highlitedTiles = tiles;
+
+
+        if (tiles.Count == 1)
+        {
+            TileObject selectedTile = tiles[0];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            onEnd();
+            return;
+        }
+
+        foreach (TileObject retreatTile in tiles)
+        {
+            retreatTile.SetHighlight(Color.red, (Vector2Int tilePosition) =>
+            {
+                TileObject selectedTile = HexTilemap.Instance.GetTile(tilePosition);
+                selectedTile.SetOccupiedCharacter(enemy);
+                tile.SetOccupiedCharacter(null);
+                enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+                ResetHighlightedTiles();
+                onEnd();
+            });
+        }
+    }
+
+    private void RandomPull(Vector2Int enemyPosition, int amount)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(enemyPosition);
+        if (tile == null) return;
+        if (tile.IsEmpty()) return;
+        BaseCharacter enemy = tile.GetOccupyingCharacter();
+        List<TileObject> tiles = enemy.GetAdvanceTiles(AxialPosition, amount, amount);
+        _highlitedTiles = tiles;
+
+        if (tiles.Count == 0) return;
+
+        if (tiles.Count == 1)
+        {
+            TileObject selectedTile = tiles[0];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            return;
+        }
+        else
+        {
+            TileObject selectedTile = tiles[Random.Range(0, tiles.Count)];
+            selectedTile.SetOccupiedCharacter(enemy);
+            tile.SetOccupiedCharacter(null);
+            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
+            return;
+        }
+       
+    }
+
+
 }

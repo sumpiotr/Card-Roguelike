@@ -58,6 +58,10 @@ public class ActionDataEditor : PropertyDrawer
                     EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
                     EditorGUI.PropertyField(position2, property.FindPropertyRelative("range"));
                     break;
+                case ActionType.Pull:
+                    EditorGUI.PropertyField(position1, property.FindPropertyRelative("value"));
+                    EditorGUI.PropertyField(position2, property.FindPropertyRelative("range"));
+                    break;
             }
 
             EditorGUI.indentLevel--;

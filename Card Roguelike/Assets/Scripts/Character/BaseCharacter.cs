@@ -105,6 +105,7 @@ public abstract class BaseCharacter : MonoBehaviour, ICharacter
     public void TakeDamage(int amount)
     {
         health -= amount;
+        Debug.Log("Auch");
     }
 
     private float DistanceLineSegmentPoint(Vector3 start, Vector3 end, Vector3 point)
