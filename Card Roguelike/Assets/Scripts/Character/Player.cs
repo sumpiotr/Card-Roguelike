@@ -66,61 +66,41 @@ public class Player : BaseCharacter
     }
 
 
-    public void ResolveActionSet(List<ActionData> actionSet)
-    {
-        ResolveAction(0, actionSet);
-    }
+   
 
-    protected void ResolveAction(int actionIndex, List<ActionData> actionSet)
+    protected override void ResolveAction(ActionData actionData, Action onActionResolved)
     {
-        if (actionIndex == actionSet.Count) return;
-        Action onActionResolved = () => { ResolveAction(actionIndex + 1, actionSet); };
-        ActionData actionData = actionSet[actionIndex];
-        switch (actionData.type)
+        if (actionData.type == ActionType.ChooseAttackTarget) {
+            if (actionData.range.rangeType == RangeType.Line)
+            {
+                ChooseAttackTarget(actionData.range, (Vector2Int choosedPosition) =>
+                {
+                    _targetsPositions.Clear();
+                    _targetsPositions.Add(choosedPosition);
+                }, onActionResolved);
+            }
+            else if (actionData.range.rangeType == RangeType.Area)
+            {
+
+            }
+           
+        }
+        else if(actionData.type == ActionType.ChooseMoveTarget)
         {
-            case ActionType.ChooseAttackTarget:
-                if (actionData.range.rangeType == RangeType.Line)
-                {
-                    ChooseAttackTarget(actionData.range, (Vector2Int choosedPosition) =>
-                    {
-                        _targetsPositions.Clear();
-                        _targetsPositions.Add(choosedPosition);
-                    }, onActionResolved);
-                }
-                else if(actionData.range.rangeType == RangeType.Area)
-                {
-
-                }
-                break;
-            case ActionType.ChooseMoveTarget:
                 ChooseMoveTarget(actionData.range, (Vector2Int choosedPosition) =>
                 {
                     _targetsPositions.Clear();
                     _targetsPositions.Add(choosedPosition);
                     onActionResolved();
                 });
-                break;
-            case ActionType.Attack:
-                PlayAttack(actionData, onActionResolved);
-                break;
-            case ActionType.Buff:
-                PlayBuff(actionData, onActionResolved);
-                break;
-            case ActionType.Move:
-                PlayMove(actionData, onActionResolved);
-                break;
-            case ActionType.Push:
-                PlayPush(actionData, onActionResolved);
-                break;
-            case ActionType.Pull:
-                PlayPull(actionData, onActionResolved);
-                break;
-            default:
-                break;
+        }
+        else
+        {
+            base.ResolveAction(actionData, onActionResolved);
         }
     }
 
-    protected virtual void PlayAttack(ActionData actionData, Action onResolved)
+    protected override void PlayAttack(ActionData actionData, Action onResolved)
     {
         switch (actionData.range.rangeType)
         {
@@ -186,7 +166,7 @@ public class Player : BaseCharacter
         }
     }
 
-    protected virtual void PlayMove(ActionData actionData, Action onResolved)
+    protected override void PlayMove(ActionData actionData, Action onResolved)
     {
         if(actionData.range.rangeType == RangeType.Target)
         {
@@ -243,7 +223,7 @@ public class Player : BaseCharacter
         _highlitedTiles.Clear();
     }
 
-    protected virtual void PlayPush(ActionData actionData, Action onResolved)
+    protected override void PlayPush(ActionData actionData, Action onResolved)
     {
         switch (actionData.range.rangeType)
         {
@@ -261,17 +241,20 @@ public class Player : BaseCharacter
             case RangeType.Line:
                 ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
                 {
+                    _targetsPositions.Clear();
+                    _targetsPositions.Add(enemyPosition);
                     Push(enemyPosition, actionData.value, onResolved);
                 }, () => { });
                 break;
            case RangeType.Area:
-
-                for(int i = actionData.range.maxRange; i >= actionData.range.minRange; i--)
+                _targetsPositions.Clear();
+                for (int i = actionData.range.maxRange; i >= actionData.range.minRange; i--)
                 {
                     List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, i, i);
                     foreach (TileObject tile in tiles)
                     {
                         if (!CanHit(tile.axialPosition, true)) continue;
+                        _targetsPositions.Add(tile.axialPosition);
                         RandomPush(tile.axialPosition, actionData.value);
                     }
                 }
@@ -283,7 +266,7 @@ public class Player : BaseCharacter
         }
     }
 
-    protected virtual void PlayPull(ActionData actionData, Action onResolved)
+    protected override void PlayPull(ActionData actionData, Action onResolved)
     {
         switch (actionData.range.rangeType)
         {
@@ -301,16 +284,20 @@ public class Player : BaseCharacter
             case RangeType.Line:
                 ChooseAttackTarget(actionData.range, (Vector2Int enemyPosition) =>
                 {
+                    _targetsPositions.Clear();
+                    _targetsPositions.Add(enemyPosition);
                     Pull(enemyPosition, actionData.value, onResolved);
                 }, () => { });
                 break;
             case RangeType.Area:
                 for (int i = actionData.range.minRange; i <= actionData.range.maxRange; i++)
                 {
+                    _targetsPositions.Clear();
                     List<TileObject> tiles = HexTilemap.Instance.GetOccupiedTileObjectsInRange(AxialPosition, i, i);
                     foreach (TileObject tile in tiles)
                     {
                         if (!CanHit(tile.axialPosition, true)) continue;
+                        _targetsPositions.Add(tile.axialPosition);
                         RandomPull(tile.axialPosition, actionData.value);
                     }
                 }
@@ -324,7 +311,7 @@ public class Player : BaseCharacter
 
 
 
-    protected virtual void PlayBuff(ActionData actionData, Action onResolved)
+    protected override void PlayBuff(ActionData actionData, Action onResolved)
     {
         onResolved();
     } 

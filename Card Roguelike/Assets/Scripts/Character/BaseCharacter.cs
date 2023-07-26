@@ -1,3 +1,6 @@
+using Actions;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Tilemap;
 using Tilemap.Tile;
@@ -15,6 +18,73 @@ public abstract class BaseCharacter : MonoBehaviour, ICharacter
     public Vector2 Position { get => transform.position; set => transform.position = value; }
     public Vector2Int AxialPosition { get => _axialPosition; set => _axialPosition = value; }
     public int Health { get => health; set => health = value; }
+
+
+
+    #region ResolveAction
+
+    public void ResolveActionSet(List<ActionData> actionSet, int actionIndex = 0)
+    {
+        if (actionIndex == actionSet.Count) return;
+        Action onActionResolved = () => { ResolveActionSet(actionSet, actionIndex + 1); };
+        ResolveAction(actionSet[actionIndex], onActionResolved);
+    }
+
+
+    protected virtual void ResolveAction(ActionData actionData, Action onActionResolved)
+    {
+        switch (actionData.type)
+        {
+            case ActionType.Attack:
+                PlayAttack(actionData, onActionResolved);
+                break;
+            case ActionType.Buff:
+                PlayBuff(actionData, onActionResolved);
+                break;
+            case ActionType.Move:
+                PlayMove(actionData, onActionResolved);
+                break;
+            case ActionType.Push:
+                PlayPush(actionData, onActionResolved);
+                break;
+            case ActionType.Pull:
+                PlayPull(actionData, onActionResolved);
+                break;
+            default:
+                onActionResolved();
+                break;
+        }
+    }
+
+    protected virtual void PlayAttack(ActionData actionData, Action onResolved)
+    {
+        onResolved();
+    }
+
+    protected virtual void PlayMove(ActionData actionData, Action onResolved)
+    {
+        onResolved();
+    }
+
+    protected virtual void PlayPush(ActionData actionData, Action onResolved)
+    {
+        onResolved();
+    }
+
+    protected virtual void PlayPull(ActionData actionData, Action onResolved)
+    {
+        onResolved();
+    }
+
+
+
+    protected virtual void PlayBuff(ActionData actionData, Action onResolved)
+    {
+        onResolved();
+    }
+
+
+    #endregion
 
 
     public bool CanHit(Vector2Int position, bool hitThroughCharacters = false)

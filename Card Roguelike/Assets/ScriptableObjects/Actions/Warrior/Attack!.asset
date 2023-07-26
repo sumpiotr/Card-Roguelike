@@ -20,9 +20,9 @@ MonoBehaviour:
   - type: 2
     value: 5
     range:
-      rangeType: 3
+      rangeType: 2
       minRange: 1
-      maxRange: 5
+      maxRange: 3
       source: 0
       multipleTargets: 0
   - type: 4
@@ -30,6 +30,6 @@ MonoBehaviour:
     range:
       rangeType: 1
       minRange: 1
-      maxRange: 5
+      maxRange: 1
       source: 0
       multipleTargets: 0

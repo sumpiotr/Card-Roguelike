@@ -15,7 +15,6 @@ public class CheckValueNode : EnemyActionNode
 
     protected override void OnStart()
     {
-       
     }
 
     protected override void OnStop()
