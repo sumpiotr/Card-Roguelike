@@ -7,6 +7,8 @@ using Tilemap.Tile;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.EventSystems.EventTrigger;
+using Random = UnityEngine.Random;
 
 public abstract class BaseCharacter : MonoBehaviour, ICharacter
 {
@@ -50,10 +52,88 @@ public abstract class BaseCharacter : MonoBehaviour, ICharacter
             case ActionType.Pull:
                 PlayPull(actionData, onActionResolved);
                 break;
+            case ActionType.Advance:
+                PlayAdvance(actionData, onActionResolved);
+                break;
+            case ActionType.Retreat:
+                PlayRetreat(actionData, onActionResolved);
+                break;
             default:
                 onActionResolved();
                 break;
         }
+    }
+
+    public void Advance(int value, Vector2Int targetAxialPosition)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(AxialPosition);
+        int amount = value;
+        List<TileObject> tiles = GetAdvanceTiles(targetAxialPosition, amount, amount);
+        if (tiles.Count == 0)
+        {
+            amount--;
+            while (amount > 0)
+            {
+                tiles = GetAdvanceTiles(targetAxialPosition, amount, amount);
+                if (tiles.Count > 0) break;
+                amount--;
+            }
+        }
+
+        if (tiles.Count == 0) return;
+
+        if (tiles.Count == 1)
+        {
+            TileObject selectedTile = tiles[0];
+            selectedTile.SetOccupiedCharacter(this);
+            tile.SetOccupiedCharacter(null);
+            transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, transform.position.z);
+            return;
+        }
+        else
+        {
+            TileObject selectedTile = tiles[Random.Range(0, tiles.Count)];
+            selectedTile.SetOccupiedCharacter(this);
+            tile.SetOccupiedCharacter(null);
+            transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, transform.position.z);
+            return;
+        }
+    }
+
+    public void Retreat(int value, Vector2Int targetAxialPosition)
+    {
+        TileObject tile = HexTilemap.Instance.GetTile(AxialPosition);
+        int amount = value;
+        List<TileObject> tiles = GetRetretTiles(targetAxialPosition, amount, amount);
+        if (tiles.Count == 0)
+        {
+            amount--;
+            while (amount > 0)
+            {
+                tiles = GetRetretTiles(targetAxialPosition, amount, amount);
+                if (tiles.Count > 0) break;
+                amount--;
+            }
+        }
+
+        if (tiles.Count == 0) return;
+
+        TileObject selectedTile = null;
+        if (tiles.Count == 1)selectedTile = tiles[0];
+        else selectedTile = tiles[Random.Range(0, tiles.Count)];
+        selectedTile.SetOccupiedCharacter(this);
+        tile.SetOccupiedCharacter(null);
+        transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, transform.position.z);
+    }
+
+    protected virtual void PlayAdvance(ActionData actionData, Action onResolved)
+    {
+
+    }
+
+    protected virtual void PlayRetreat(ActionData actionData, Action onResolved)
+    {
+
     }
 
     protected virtual void PlayAttack(ActionData actionData, Action onResolved)
@@ -176,20 +256,5 @@ public abstract class BaseCharacter : MonoBehaviour, ICharacter
     {
         health -= amount;
         Debug.Log("Auch");
-    }
-
-    private float DistanceLineSegmentPoint(Vector3 start, Vector3 end, Vector3 point)
-    {
-        var wander = point - start;
-        var span = end - start;
-
-        // Compute how far along the line is the closest approach to our point.
-        float t = Vector3.Dot(wander, span) / span.sqrMagnitude;
-
-        // Restrict this point to within the line segment from start to end.
-        t = Mathf.Clamp01(t);
-
-        Vector3 nearest = start + t * span;
-        return (nearest - point).magnitude;
     }
 }

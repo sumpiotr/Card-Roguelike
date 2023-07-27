@@ -314,7 +314,45 @@ public class Player : BaseCharacter
     protected override void PlayBuff(ActionData actionData, Action onResolved)
     {
         onResolved();
-    } 
+    }
+
+    protected override void PlayAdvance(ActionData actionData, Action onResolved)
+    {
+        if(actionData.range.rangeType == RangeType.Target)
+        {
+            if(_targetsPositions.Count > 0)
+            {
+                Advance(actionData.value, _targetsPositions[0]);
+                onResolved();
+            }
+        }
+        else
+        {
+            ChooseAttackTarget(actionData.range, (Vector2Int target) =>
+            {
+                Advance(actionData.value, target);
+            }, onResolved);
+        }
+    }
+
+    protected override void PlayRetreat(ActionData actionData, Action onResolved)
+    {
+        if (actionData.range.rangeType == RangeType.Target)
+        {
+            if (_targetsPositions.Count > 0)
+            {
+                Retreat(actionData.value, _targetsPositions[0]);
+                onResolved();
+            }
+        }
+        else
+        {
+            ChooseAttackTarget(actionData.range, (Vector2Int target) =>
+            {
+                Retreat(actionData.value, target);
+            }, onResolved);
+        }
+    }
 
     private IEnumerator Move(Vector2Int target, Action callback)
     {
@@ -397,37 +435,7 @@ public class Player : BaseCharacter
         if (tile == null) return;
         if (tile.IsEmpty()) return;
         BaseCharacter enemy = tile.GetOccupyingCharacter();
-        List<TileObject> tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
-        if (tiles.Count == 0)
-        {
-            amount--;
-            while (amount > 0)
-            {
-                tiles = enemy.GetRetretTiles(AxialPosition, amount, amount);
-                if (tiles.Count > 0) break;
-                amount--;
-            }
-        }
-        _highlitedTiles = tiles;
-
-        if (tiles.Count == 0) return;
-
-        if (tiles.Count == 1)
-        {
-            TileObject selectedTile = tiles[0];
-            selectedTile.SetOccupiedCharacter(enemy);
-            tile.SetOccupiedCharacter(null);
-            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
-            return;
-        }
-        else
-        {
-            TileObject selectedTile = tiles[Random.Range(0, tiles.Count)];
-            selectedTile.SetOccupiedCharacter(enemy);
-            tile.SetOccupiedCharacter(null);
-            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
-            return;
-        }
+        enemy.Retreat(amount, AxialPosition);
     }
 
     private void Pull(Vector2Int enemyPosition, int amount, Action onEnd)
@@ -470,28 +478,7 @@ public class Player : BaseCharacter
         if (tile == null) return;
         if (tile.IsEmpty()) return;
         BaseCharacter enemy = tile.GetOccupyingCharacter();
-        List<TileObject> tiles = enemy.GetAdvanceTiles(AxialPosition, amount, amount);
-        _highlitedTiles = tiles;
-
-        if (tiles.Count == 0) return;
-
-        if (tiles.Count == 1)
-        {
-            TileObject selectedTile = tiles[0];
-            selectedTile.SetOccupiedCharacter(enemy);
-            tile.SetOccupiedCharacter(null);
-            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
-            return;
-        }
-        else
-        {
-            TileObject selectedTile = tiles[Random.Range(0, tiles.Count)];
-            selectedTile.SetOccupiedCharacter(enemy);
-            tile.SetOccupiedCharacter(null);
-            enemy.transform.position = new Vector3(selectedTile.transform.position.x, selectedTile.transform.position.y, enemy.transform.position.z);
-            return;
-        }
-       
+        enemy.Advance(amount, AxialPosition);
     }
 
 

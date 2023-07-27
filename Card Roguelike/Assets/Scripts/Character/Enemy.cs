@@ -53,14 +53,19 @@ public class Enemy : BaseCharacter
         }
     }
 
-
     public void PrepareAction(ActionData action)
     {
         _actionsList.Add(action);
     }
-    
 
-  
+    #region ResolveAction
+
+    protected override void PlayAttack(ActionData actionData, Action onResolved)
+    {
+        Debug.Log("attack");
+        _player.TakeDamage(actionData.value);
+        onResolved();
+    }
 
     protected override void PlayMove(ActionData actionData, Action onResolved)
     {
@@ -70,6 +75,30 @@ public class Enemy : BaseCharacter
                 StartCoroutine(nameof(MoveToPlayer), actionData.value);
                 break;
         }
+    }
+
+    protected override void PlayAdvance(ActionData actionData, Action onResolved)
+    {
+        Advance(actionData.value, _player.AxialPosition);
+        onResolved();
+    }
+
+    protected override void PlayRetreat(ActionData actionData, Action onResolved)
+    {
+        Retreat(actionData.value, _player.AxialPosition);
+        onResolved();
+    }
+
+    protected override void PlayPush(ActionData actionData, Action onResolved)
+    {
+        _player.Retreat(actionData.value, AxialPosition);
+        onResolved();
+    }
+
+    protected override void PlayPull(ActionData actionData, Action onResolved)
+    {
+        _player.Advance(actionData.value, AxialPosition);
+        onResolved();
     }
 
     private IEnumerator MoveToPlayer(int speed)
@@ -93,6 +122,8 @@ public class Enemy : BaseCharacter
         }
 
     }
+
+    #endregion
 
     public int GetRangeFromPlayer()
     {

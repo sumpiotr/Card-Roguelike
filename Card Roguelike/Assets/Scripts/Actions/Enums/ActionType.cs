@@ -8,6 +8,8 @@ namespace Actions
         Move,
         Push,
         Pull,
+        Advance,
+        Retreat,
         Buff,
     }
 }

@@ -159,10 +159,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b470e0a3bb1a72d4daa1437eb5f934a0
-  position: {x: 525, y: 185}
+  position: {x: 525.00006, y: 185}
   owner: {fileID: 0}
   actionData:
-    type: 2
+    type: 7
     value: 3
     range:
       rangeType: 1
