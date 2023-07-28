@@ -15,8 +15,20 @@ namespace Map
         [SerializeField]
         private int height =  20;
 
-        [SerializeField] 
-        private TileDataScriptableObject wallData;
+        [SerializeField]
+        private int minRoomWidth = 10;
+
+        [SerializeField]
+        private int minRoomHeight = 10;
+
+        [SerializeField]
+        private int dungeonWidth = 70;
+
+        [SerializeField]
+        private int dungeonHeight = 70;
+
+        [SerializeField]
+        private int roomOffset = 1;
 
 
         private void Awake()
@@ -28,23 +40,14 @@ namespace Map
         public void GenerateMap()
         {
             Debug.Log(HexTilemap.Instance);
-            HexTilemap.Instance.GenerateTilemap(width, height);
-            int[,] map = PrimMapGenerator.GenerateMap(width, height);
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    if (map[i, j] == 1)
-                    {
-                        HexTilemap.Instance.GetTileByIndexPosition(new Vector2Int(i, j)).SetData(wallData);
-                    }
-                }
-            }
+            HexTilemap.Instance.GenerateTilemap(dungeonWidth, dungeonHeight);
+            DungeonGenerator.GenerateDungeon(dungeonWidth, dungeonHeight, minRoomWidth, minRoomHeight, roomOffset);
+           
         }
 
         public Vector2Int GetMapSize()
         {
-            return new Vector2Int(width, height);
+            return new Vector2Int(dungeonWidth, dungeonHeight);
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Tilemap
         //hex size in unity unit
         [SerializeField] private float hexSize = 1f;
 
+        [SerializeField]
+        private TileDataScriptableObject wallData;
+
         private int[,] _neighbourDirections =  { { 0, -1 }, { 1, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 }, { -1, 1 } };
 
         private Dictionary<Vector2Int, TileObject> _hexes = new Dictionary<Vector2Int, TileObject>();
@@ -264,6 +267,31 @@ namespace Tilemap
         }
 
 
+        public void LoadMap(int[,] map)
+        {
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    if (map[i, j] == 1)
+                    {
+                        HexTilemap.Instance.GetTileByIndexPosition(new Vector2Int(i, j)).SetData(wallData);
+                    }
+                }
+            }
+
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    if (map[i, j] == 1)
+                    {
+                        TileObject tile = HexTilemap.Instance.GetTileByIndexPosition(new Vector2Int(i, j));
+                        if (HexTilemap.Instance.GetWalkableNeighbours(tile.axialPosition).Count == 0) tile.gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
 
 
 

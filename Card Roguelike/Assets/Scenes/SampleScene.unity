@@ -835,7 +835,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 40
   height: 40
-  wallData: {fileID: 11400000, guid: ca2e0f2fc5e7a8a4582879dadeecb483, type: 2}
+  minRoomWidth: 10
+  minRoomHeight: 10
+  dungeonWidth: 70
+  dungeonHeight: 70
+  roomOffset: 2
 --- !u!114 &1239053807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,6 +854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: -941146570456391332, guid: 89f6a5362d7e893499d2c5e358d78428, type: 3}
   hexSize: 1
+  wallData: {fileID: 11400000, guid: ca2e0f2fc5e7a8a4582879dadeecb483, type: 2}
 --- !u!1001 &1322135670
 PrefabInstance:
   m_ObjectHideFlags: 0

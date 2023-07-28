@@ -162,7 +162,7 @@ MonoBehaviour:
   position: {x: 525.00006, y: 185}
   owner: {fileID: 0}
   actionData:
-    type: 7
+    type: 2
     value: 3
     range:
       rangeType: 1
