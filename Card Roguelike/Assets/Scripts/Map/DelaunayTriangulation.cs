@@ -11,9 +11,9 @@ public class DelaunayTriangulation
         public Vector2Int b;
         public Vector2Int c;
 
-        public Edge edge1;
-        public Edge edge2;
-        public Edge edge3;
+        public GraphEdge edge1;
+        public GraphEdge edge2;
+        public GraphEdge edge3;
 
         public Triangle(Vector2Int a, Vector2Int b, Vector2Int c)
         {
@@ -21,12 +21,12 @@ public class DelaunayTriangulation
             this.b = b;
             this.c = c;
 
-            edge1 = new Edge(a, b);
-            edge2 = new Edge(a, c);
-            edge3 = new Edge(b, c);
+            edge1 = new GraphEdge(a, b);
+            edge2 = new GraphEdge(a, c);
+            edge3 = new GraphEdge(b, c);
         }
 
-        public bool ContainsEdge(Edge edge)
+        public bool ContainsEdge(GraphEdge edge)
         {
             return edge1.Equals(edge) || edge2.Equals(edge) || edge3.Equals(edge);
         }
@@ -37,23 +37,7 @@ public class DelaunayTriangulation
         }
     }
 
-    public class Edge 
-    {
-        public Vector2Int point1;
-        public Vector2Int point2;
-
-        public Edge(Vector2Int point1, Vector2Int point2)
-        {
-            this.point1 = point1;
-            this.point2 = point2;
-        }
-
-        public bool Equals(Edge edge)
-        {
-            return edge.point1 == point1 && edge.point2 == point2 || edge.point2 == point1 && edge.point1 == point2;
-        }
-        
-    }
+  
 
     public static List<Triangle> Triangulation(List<Vector2Int> points)
     {
@@ -70,7 +54,7 @@ public class DelaunayTriangulation
             {
                 if (!IsValidTriangle(triangle, point)) badTriangles.Add(triangle);
             }
-            List<Edge> polygon = new List<Edge>();
+            List<GraphEdge> polygon = new List<GraphEdge>();
             foreach (Triangle badTriangle in badTriangles)
             {
                 bool unique1 = true;
@@ -100,9 +84,9 @@ public class DelaunayTriangulation
             {
                 triangles.Remove(badTriangle);
             }
-            foreach(Edge edge in polygon)
+            foreach(GraphEdge edge in polygon)
             {
-                Triangle newTriangle = new Triangle(edge.point1, edge.point2, point);
+                Triangle newTriangle = new Triangle(edge.src, edge.destination, point);
                 triangles.Add(newTriangle);
             }
         }
