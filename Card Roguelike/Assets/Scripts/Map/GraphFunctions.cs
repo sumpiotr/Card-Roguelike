@@ -64,6 +64,48 @@ public class GraphFunctions
 
         return newGraph;
     }
+
+    public static int CalculateShortestPathLength(Vector2Int startVertex, Vector2Int endVertex, List<Room> rooms)
+    {
+        Queue<Vector2Int> queue = new Queue<Vector2Int>();
+        HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
+        Dictionary<Vector2Int, int> distance = new Dictionary<Vector2Int, int>();
+
+        queue.Enqueue(startVertex);
+        visited.Add(startVertex);
+        distance[startVertex] = 0;
+
+        while (queue.Count > 0)
+        {
+            Vector2Int currentVertex = queue.Dequeue();
+
+            if (currentVertex == endVertex)
+            {
+                // Znaleziono docelowy wierzcho³ek, zwracamy jego odleg³oœæ.
+                return distance[currentVertex];
+            }
+
+            foreach (Room room in rooms)
+            {
+                if (room.center == currentVertex)
+                {
+                    foreach (Room connectedRoom in room.connectedRooms)
+                    {
+                        Vector2Int neighborVertex = connectedRoom.center;
+                        if (!visited.Contains(neighborVertex))
+                        {
+                            queue.Enqueue(neighborVertex);
+                            visited.Add(neighborVertex);
+                            distance[neighborVertex] = distance[currentVertex] + 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Nie znaleziono œcie¿ki, zwracamy -1 lub inn¹ wartoœæ oznaczaj¹c¹ brak po³¹czenia.
+        return -1;
+    }
 }
 
 

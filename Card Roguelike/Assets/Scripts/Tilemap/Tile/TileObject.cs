@@ -77,9 +77,15 @@ namespace Tilemap.Tile
            if(_onClick != null) _onClick(axialPosition);
             else
             {
-                BaseCharacter dummyObject = Instantiate(dummy, transform.position, Quaternion.identity);
+
+                if (GameManager.Instance.IsFightModeActive()) return;
+
+                GameManager.Instance.GetPlayer().MoveTo(axialPosition);
+
+                //test dummy spawn
+               /* BaseCharacter dummyObject = Instantiate(dummy, transform.position, Quaternion.identity);
                 dummyObject.transform.position = new Vector3(dummyObject.transform.position.x, dummyObject.transform.position.y, -1);
-                SetOccupiedCharacter(dummyObject);
+                SetOccupiedCharacter(dummyObject);*/
             }
         }
     }

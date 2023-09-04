@@ -8,6 +8,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using Random = UnityEngine.Random;
 
 public class DungeonGenerator
 {
@@ -16,7 +17,8 @@ public class DungeonGenerator
 
     public static void  GenerateDungeon(int dungeonWidth, int dungeonHeight, int minRoomWidth, int minRoomHeight, int roomOffset)
     {
-        List<BoundsInt> rooms = ProcedularDungeonGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt(new Vector3Int(0, 0, 0), new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
+        List<Room> rooms = new List<Room>();
+        List<BoundsInt> roomsBounds = ProcedularDungeonGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt(new Vector3Int(0, 0, 0), new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
 
         int[,] map = new int[dungeonWidth, dungeonHeight];
         for(int i = 0; i < dungeonWidth; i++)
@@ -30,7 +32,7 @@ public class DungeonGenerator
 
         List<Vector2Int> roomCenters = new List<Vector2Int>();
 
-        foreach (BoundsInt room in rooms)
+        foreach (BoundsInt room in roomsBounds)
         {
             for(int col = roomOffset; col < room.size.x-roomOffset; col++)
             {
@@ -41,7 +43,9 @@ public class DungeonGenerator
                 }
             }
 
-            roomCenters.Add(new Vector2Int(room.min.x + room.size.x / 2, room.min.y + room.size.y / 2));
+            Vector2Int center = new Vector2Int(room.min.x + room.size.x / 2, room.min.y + room.size.y / 2);
+            roomCenters.Add(center);
+            rooms.Add(new Room(center, room));
         }
 
 
@@ -64,6 +68,8 @@ public class DungeonGenerator
             if (optimalGraph.edges.Contains(edge)) continue;
             if(UnityEngine.Random.Range(0, 100) < 10   )optimalGraph.edges.Add(edge);   
         }
+
+        //List<Room> rooms;
 
         foreach (GraphEdge edge in optimalGraph.edges)
         {
@@ -91,10 +97,71 @@ public class DungeonGenerator
             }
 
 
+            Room room1 = rooms.Find(x => x.center == edge.src);
+            Room room2 = rooms.Find(x => x.center == edge.destination);
+
+            room1.AddConnectedRoom(room2);
+            room2.AddConnectedRoom(room1);
+
         }
 
         HexTilemap.Instance.LoadMap(map);
 
+        FillRooms(rooms);
+
     }
 
+    private static void FillRooms(List<Room> rooms) {
+        List<Room> emptyRooms = new List<Room>(rooms);
+        Room startRoom = emptyRooms[Random.Range(0, rooms.Count - 1)];
+        emptyRooms.Remove(startRoom);
+        Room endRoom = emptyRooms[Random.Range(0, rooms.Count - 1)];
+
+        SpawnManager.Instance.SpawnPlayer(startRoom.center);
+
+        SpawnManager.Instance.SpawnExit(endRoom.center);
+
+        Debug.Log(GraphFunctions.CalculateShortestPathLength(startRoom.center, endRoom.center, rooms));
+    }
+
+}
+
+public enum RoomType
+{
+    Start,
+    Exit,
+    Encounter,
+    Treasure
+}
+
+public class Room : IEquatable<Room>
+{
+    public Vector2Int center;
+    public BoundsInt size;
+    public List<Room> connectedRooms;
+
+
+    public Room(Vector2Int center, BoundsInt size)
+    {
+        this.center = center;
+        connectedRooms = new List<Room>();
+        this.size = size;
+    }
+
+    public void AddConnectedRoom(Room connectedRoom)
+    {
+        foreach(Room room in connectedRooms)
+        {
+            if(room.center == connectedRoom.center)
+            {
+                return;
+            }
+        }
+        connectedRooms.Add(connectedRoom);
+    }
+
+    public bool Equals(Room other)
+    {
+        return center == other.center;
+    }
 }

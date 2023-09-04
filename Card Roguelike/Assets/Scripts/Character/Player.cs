@@ -10,6 +10,8 @@ using Tilemap;
 using UnityEngine.Tilemaps;
 using Unity.VisualScripting;
 using UnityEngine.WSA;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class Player : BaseCharacter
 {
@@ -26,7 +28,7 @@ public class Player : BaseCharacter
 
     private List<TileObject> _highlitedTiles = new List<TileObject>();
 
-
+    private bool isMoving = false;
 
 
 
@@ -354,8 +356,15 @@ public class Player : BaseCharacter
         }
     }
 
+    public void MoveTo(Vector2Int target)
+    {
+        if (isMoving) return;
+        IEnumerator moveCoroutine = Move(target, () => { });
+        StartCoroutine(moveCoroutine);
+    }
     private IEnumerator Move(Vector2Int target, Action callback)
     {
+        isMoving = true;
         List<PathNode> path = AStar.findPath(HexTilemap.Instance, AxialPosition, target);
         Debug.Log(path == null);
         if (path != null)
@@ -367,14 +376,14 @@ public class Player : BaseCharacter
                 {
                     TileObject tile = HexTilemap.Instance.GetTile(node.nodePosition);
                     transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, transform.position.z);
-                    yield return new WaitForSeconds(Time.deltaTime * 500);
+                    yield return new WaitForSeconds(Time.deltaTime * 250);
                 }
                 TileObject finalNode = HexTilemap.Instance.GetTile(path[path.Count - 1].nodePosition);
                 finalNode.SetOccupiedCharacter(this);
             }
         }
         callback();
-
+        isMoving = false;
     }
 
     private void Attack(Vector2Int enemyPosition, int amount)
