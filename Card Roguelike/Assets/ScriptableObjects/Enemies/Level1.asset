@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565cfa29095a46847ad4ee7d1f274e4d, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  encounters:
+  - enemies:
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+  - enemies:
+    - {fileID: 11400000, guid: 80765db05e837664db14361e38fe2518, type: 2}
+    - {fileID: 11400000, guid: e51cbf5f1b9d8f6448ad0958b118e8c4, type: 2}
+    - {fileID: 11400000, guid: e51cbf5f1b9d8f6448ad0958b118e8c4, type: 2}
+  - enemies:
+    - {fileID: 11400000, guid: e51cbf5f1b9d8f6448ad0958b118e8c4, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+  - enemies:
+    - {fileID: 11400000, guid: 80765db05e837664db14361e38fe2518, type: 2}
+    - {fileID: 11400000, guid: 80765db05e837664db14361e38fe2518, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}
+    - {fileID: 11400000, guid: 1db29272515b54c4e832414264ec934d, type: 2}

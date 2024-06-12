@@ -12,7 +12,14 @@ public class SpawnManager : MonoBehaviour
     private Player playerPrefab;
 
     [SerializeField]
+    private Enemy enemyPrefab;
+
+    [SerializeField]
     private GameObject exitPrefab;
+
+    [SerializeField]
+    private EncountersListScriptableObject encounters;
+
 
     public void Awake()
     {
@@ -32,6 +39,37 @@ public class SpawnManager : MonoBehaviour
     public void SpawnExit(Vector2Int position)
     {
         TileObject tile = HexTilemap.Instance.GetTileByIndexPosition(position);
-        GameObject exit = Instantiate(exitPrefab, new Vector3(tile.transform.position.x, tile.transform.position.y, -1), Quaternion.identity);
+        Instantiate(exitPrefab, new Vector3(tile.transform.position.x, tile.transform.position.y, -1), Quaternion.identity);
+    }
+
+    public void SpawnEnemies(Room room)
+    {
+        EncounterListItem encounter = encounters.GetRandomEncounter();
+        foreach(EnemyDataScriptableObject enemyData in encounter.enemies)
+        {
+            int safe = 0;
+            TileObject tile = null;
+            while (tile == null)
+            {
+                Vector2Int position = new Vector2Int(Random.Range(room.center.x - (room.size.x / 2), room.center.x + (room.size.x / 2)), Random.Range(room.center.y - (room.size.y / 2), room.center.y + (room.size.y / 2)));
+                Debug.Log(position);
+                Debug.Log(room.center);
+                Debug.Log(room.size.min.x);
+                TileObject tmp = HexTilemap.Instance.GetTileByIndexPosition(position);
+                Debug.Log(tmp);
+                if (tmp != null && tmp.IsEmpty() && tmp.IsWalkable()) {
+                    tile = tmp;
+                    break;
+                }
+                safe++;
+                if (safe == 100) break;
+            }
+            if(tile != null)
+            {
+                Enemy enemy = Instantiate(enemyPrefab, new Vector3(tile.transform.position.x, tile.transform.position.y, -1), Quaternion.identity);
+                enemy.SetupData(enemyData);
+                tile.SetOccupiedCharacter(enemy);
+            }
+        }
     }
 }

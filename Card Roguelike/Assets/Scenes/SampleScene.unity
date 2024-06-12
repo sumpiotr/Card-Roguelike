@@ -168,7 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6601806772290042698, guid: 74712d2e4ae14d34ea2e7665e62d351e, type: 3}
+  enemyPrefab: {fileID: 6322457499164732031, guid: ce2743b2e2422684a93ffc6cf5c70713, type: 3}
   exitPrefab: {fileID: 7819043573680413190, guid: e38b907f479731442b11939cd69ab1c7, type: 3}
+  encounters: {fileID: 11400000, guid: b89e8364af033da47ae9f7c4ef7488d1, type: 2}
 --- !u!1001 &348400755
 PrefabInstance:
   m_ObjectHideFlags: 0

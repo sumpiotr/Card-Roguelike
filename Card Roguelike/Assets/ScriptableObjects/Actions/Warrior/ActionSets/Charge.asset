@@ -16,7 +16,6 @@ MonoBehaviour:
   actions:
   - type: 1
     value: 10
-    stat: 0
     range:
       rangeType: 3
       minRange: 4
@@ -25,7 +24,6 @@ MonoBehaviour:
       multipleTargets: 0
   - type: 3
     value: 0
-    stat: 0
     range:
       rangeType: 1
       minRange: 4
@@ -34,7 +32,6 @@ MonoBehaviour:
       multipleTargets: 0
   - type: 0
     value: 10
-    stat: 0
     range:
       rangeType: 1
       minRange: 1

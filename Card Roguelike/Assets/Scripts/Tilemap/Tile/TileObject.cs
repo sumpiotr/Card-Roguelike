@@ -74,11 +74,11 @@ namespace Tilemap.Tile
 
         private void OnMouseDown()
         {
-           if(_onClick != null) _onClick(axialPosition);
+            if (_onClick != null) _onClick(axialPosition);
             else
             {
 
-                if (GameManager.Instance.IsFightModeActive()) return;
+                if (GameManager.Instance.IsFightModeActive() || !IsEmpty()) return;
 
                 GameManager.Instance.GetPlayer().MoveTo(axialPosition);
 

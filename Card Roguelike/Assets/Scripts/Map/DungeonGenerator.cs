@@ -42,11 +42,12 @@ public class DungeonGenerator
                     map[floorPosition.x, floorPosition.y] = 0;
                 }
             }
-
-            Vector2Int center = new Vector2Int(room.min.x + room.size.x / 2, room.min.y + room.size.y / 2);
+            Vector2Int center = new Vector2Int(room.min.x + (room.size.x / 2), room.min.y + (room.size.y / 2));
             roomCenters.Add(center);
+            Debug.Log(center);
             rooms.Add(new Room(center, room));
         }
+
 
 
 
@@ -116,12 +117,17 @@ public class DungeonGenerator
         Room startRoom = emptyRooms[Random.Range(0, rooms.Count - 1)];
         emptyRooms.Remove(startRoom);
         Room endRoom = emptyRooms[Random.Range(0, rooms.Count - 1)];
+        emptyRooms.Remove(endRoom);
 
         SpawnManager.Instance.SpawnPlayer(startRoom.center);
 
         SpawnManager.Instance.SpawnExit(endRoom.center);
 
-        Debug.Log(GraphFunctions.CalculateShortestPathLength(startRoom.center, endRoom.center, rooms));
+       
+        foreach(Room room in emptyRooms)
+        {
+            SpawnManager.Instance.SpawnEnemies(room);
+        }
     }
 
 }

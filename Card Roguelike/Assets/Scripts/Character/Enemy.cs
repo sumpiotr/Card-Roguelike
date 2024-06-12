@@ -10,23 +10,19 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : BaseCharacter
 {
-    [SerializeField]
-    private EnemyBehaviourTree behaviourTree;
 
     private Player _player;
+
+    private EnemyDataScriptableObject _data;
+
+    private EnemyBehaviourTree _behaviourTree;
 
     private List<ActionData> _actionsList;
 
     private void Start()
     {
         _player = GameManager.Instance.GetPlayer();
-
         _actionsList = new List<ActionData>();
-
-        if (behaviourTree == null) return;
-
-        behaviourTree.SetOwner(this);
-        behaviourTree = behaviourTree.Clone() as EnemyBehaviourTree;
     }
 
     private void Update()
@@ -37,14 +33,29 @@ public class Enemy : BaseCharacter
         }
     }
 
+    public void SetupData(EnemyDataScriptableObject data)
+    {
+        _data = data;
+        GetComponent<SpriteRenderer>().sprite = data.sprite;
+        Debug.Log("/EnemiesTrees/" + _data.name);
+        EnemyBehaviourTree original = Resources.Load("EnemiesTrees/" + _data.name) as EnemyBehaviourTree;
+        _behaviourTree = original.Clone() as EnemyBehaviourTree;
+        _behaviourTree.SetOwner(this);
+    }
+
+    public EnemyDataScriptableObject GetData()
+    {
+        return _data;
+    }
+
 
     public void TakeTurn()
     {
         _actionsList.Clear();
-        behaviourTree.Update();
-        while(behaviourTree.treeState == NodeState.Running)
+        _behaviourTree.Update();
+        while(_behaviourTree.treeState == NodeState.Running)
         {
-            behaviourTree.Update();
+            _behaviourTree.Update();
         }
 
         if(_actionsList.Count > 0)
