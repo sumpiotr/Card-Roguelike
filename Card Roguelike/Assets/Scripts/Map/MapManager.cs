@@ -39,7 +39,6 @@ namespace Map
 
         public void GenerateMap()
         {
-            Debug.Log(HexTilemap.Instance);
             HexTilemap.Instance.GenerateTilemap(dungeonWidth, dungeonHeight);
             DungeonGenerator.GenerateDungeon(dungeonWidth, dungeonHeight, minRoomWidth, minRoomHeight, roomOffset);
            

@@ -51,12 +51,8 @@ public class SpawnManager : MonoBehaviour
             TileObject tile = null;
             while (tile == null)
             {
-                Vector2Int position = new Vector2Int(Random.Range(room.center.x - (room.size.x / 2), room.center.x + (room.size.x / 2)), Random.Range(room.center.y - (room.size.y / 2), room.center.y + (room.size.y / 2)));
-                Debug.Log(position);
-                Debug.Log(room.center);
-                Debug.Log(room.size.min.x);
+                Vector2Int position = new Vector2Int(Random.Range(room.center.x - ((room.size.size.x) / 2), room.center.x + ((room.size.size.x) / 2)), Random.Range(room.center.y - ((room.size.size.y) / 2), room.center.y + ((room.size.size.y ) / 2)));
                 TileObject tmp = HexTilemap.Instance.GetTileByIndexPosition(position);
-                Debug.Log(tmp);
                 if (tmp != null && tmp.IsEmpty() && tmp.IsWalkable()) {
                     tile = tmp;
                     break;

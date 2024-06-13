@@ -100,7 +100,6 @@ public class DelaunayTriangulation
             }
         }
 
-        Debug.Log(triangles.Count);
 
         foreach(Triangle triangle in toRemove)
         {

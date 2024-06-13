@@ -37,7 +37,6 @@ public class Enemy : BaseCharacter
     {
         _data = data;
         GetComponent<SpriteRenderer>().sprite = data.sprite;
-        Debug.Log("/EnemiesTrees/" + _data.name);
         EnemyBehaviourTree original = Resources.Load("EnemiesTrees/" + _data.name) as EnemyBehaviourTree;
         _behaviourTree = original.Clone() as EnemyBehaviourTree;
         _behaviourTree.SetOwner(this);

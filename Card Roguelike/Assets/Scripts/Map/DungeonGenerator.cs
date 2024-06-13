@@ -44,7 +44,6 @@ public class DungeonGenerator
             }
             Vector2Int center = new Vector2Int(room.min.x + (room.size.x / 2), room.min.y + (room.size.y / 2));
             roomCenters.Add(center);
-            Debug.Log(center);
             rooms.Add(new Room(center, room));
         }
 
@@ -122,6 +121,7 @@ public class DungeonGenerator
         SpawnManager.Instance.SpawnPlayer(startRoom.center);
 
         SpawnManager.Instance.SpawnExit(endRoom.center);
+
 
        
         foreach(Room room in emptyRooms)
